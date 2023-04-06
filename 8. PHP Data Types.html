@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Data Types     
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                line-height:1.5;
+                font-size:1rem;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Data Types     
+        </h1>
+
+       <hr>
+
+       <h2>
+        PHP Data Types 
+       </h2>
+
+       <div>
+        Variables can store data of different types, and different data types can do different things. 
+        <br>
+        PHP supports the following data types: 
+        <br>
+        <ul>
+            <li>String</li>
+            <li>Integer</li>
+            <li>Float (floating point numbers - also called double)</li>
+            <li>Boolean</li>
+            <li>Array</li>
+            <li>Object</li>
+            <li>NULL</li>
+            <li>Resource</li>
+        </ul>
+       </div>
+
+       <hr>
+
+       <h2>
+        PHP String 
+       </h2>
+
+       <div>
+        A string is a sequence of characters, like "Hello World!". 
+        <br>
+        A string can be any text inside quotes. You can use single or double quotes. 
+        <br>
+        Example:- 
+        <br>
+        <iframe src="8. PHP Data Types-String.php" height="60" width="100%"></iframe>
+       </div>
+
+       <hr>
+
+       <h2>
+        PHP Integer 
+       </h2>
+
+       <div>
+        An integer data type is a non-decimal number between -2,147,483,648 and 2,147,483,647. 
+        <br>
+        Rules for integers: 
+        <br>
+        <ul>
+            <li>An integer must have at least one digit</li>
+            <li>An integer must not have a decimal point</li>
+            <li>An integer can be either positive or negative</li>
+            <li>Integers can be specified in: decimal (base 10), hexadecimal (base 16), octal (base 8), or binary (base 2) notation</li>
+        </ul>
+
+        <br>
+        In the following example $x is an integer. The PHP var_dump() function returns the data type and value. 
+        <br>
+        Example:- 
+        <br>
+        <iframe src="8. PHP Data Types-Integer.php" height="80" width="100%"></iframe>
+       </div>
+
+       <hr>
+       <br>
+       <br>
+       <hr>
+
+       <h2>
+        PHP Float 
+       </h2>
+
+       <div>
+        A float (floating point number) is a number with a decimal point or a number in exponential form. 
+        <br>
+        In the following example $x is a float. The PHP var_dump() function returns the data type and value. 
+        <br>
+        Example:- 
+        <br>
+        <iframe src="8. PHP Data Types-Float.php" height="80" width="100%"></iframe>
+       </div>
+
+       <hr>
+
+       <h2>
+        PHP Boolean 
+       </h2>
+
+       <div>
+        A Boolean represents two possible states: TRUE or FALSE. 
+        <br>
+        <p style="border:1px solid grey;padding:2rem;">
+        $x = true;
+        <br>
+        $y = false; 
+        </p>
+
+        <br>
+        Booleans are often used in conditional testing. You will learn more about conditional testing in a later chapter of this tutorial. 
+       </div>
+
+       <hr>
+
+       <h2>
+        PHP Array 
+       </h2>
+
+       <div>
+        An array stores multiple values in one single variable. 
+        <br>
+        In the following example $cars is an array. The PHP var_dump() function returns the data type and value. 
+        <br>
+        Example:- 
+        <br>
+        <iframe src="8. PHP Data Types-Array.php" height="80" width="100%"></iframe>
+        <br>
+        You will learn a lot more about arrays in later chapters of this tutorial. 
+       </div>
+
+       <hr>
+
+       <h2>
+        PHP Object 
+       </h2>
+
+       <div>
+        Classes and Objects are the two main aspects of object-oriented programming. 
+        <br>
+        A class is a template for objects, and an object is an instance of a class. 
+        <br>
+        When the individual objects are created, they inherit all the properties and behaviors from the class, but each object will have different values for the properties. 
+        <br>
+        Let's assume we have a class named Car. A Car can have properties like model, color, etc. We can define variables like $model, $color, and so on, to hold the values of these properties. 
+        <br>
+        When the individual objects (Volvo, BMW, Toyota, etc.) are created, they inherit all the properties and behaviors from the class, but each object will have different values for the properties. 
+        <br>
+        If you create a __construct() function, PHP will automatically call this function when you create an object from a class. 
+        <br>
+        Example:- 
+        <br>
+        <iframe src="8. PHP Data Types-Object.php" height="100" width="100%"></iframe>
+       </div>
+
+       <hr>
+
+       <h2>
+        PHP NULL Value 
+       </h2>
+
+       <div>
+        Null is a special data type which can have only one value: NULL. 
+        <br>
+        A variable of data type NULL is a variable that has no value assigned to it. 
+        <br>
+        <strong>Tip: </strong>If a variable is created without a value, it is automatically assigned a value of NULL. 
+        <br>
+        Variables can also be emptied by setting the value to NULL. 
+        <br>
+        Example:- 
+        <br>
+        <iframe src="8. PHP Data Types-NULL.php" height="100" width="100%"></iframe>
+       </div>
+
+       <hr>
+
+       <h2>
+        PHP Resource 
+       </h2>
+
+       <div>
+        The special resource type is not an actual data type. It is the storing of a reference to functions and resources external to PHP. 
+        <br>
+        A common example of using the resource data type is a database call. 
+        <br>
+        We will not talk about the resouce type here, since it is an advanced topic. 
+       </div>
+    </body>
+</html>

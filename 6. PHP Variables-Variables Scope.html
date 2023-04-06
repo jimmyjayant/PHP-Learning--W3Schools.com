@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Variables Scope    
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                line-height:1.5;
+                font-size:1rem;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Variables Scope     
+        </h1>
+
+       <hr>
+
+       <h2>
+        PHP Variables Scope 
+       </h2>
+
+       <div>
+        In PHP, variables can be declared anywhere in the script. 
+        <br>
+        The scope of a variable is the part of the script where the variable can be referenced/used. 
+        <br>
+        PHP has three different variable scopes: 
+        <br>
+        <ul>
+            <li>local</li>
+            <li>global</li>
+            <li>static</li>
+        </ul>
+       </div>
+
+       <hr>
+
+       <h2>
+        Global and Local Scope 
+       </h2>
+
+       <div>
+        A variable declared <strong>outside</strong> a function has a GLOBAL SCOPE and can only be accessed outside a function. 
+        <br>
+        Example:- 
+        <br>
+        <b><u>Variable with global scope: </u></b>
+        <br>
+        <iframe src="6. PHP Variables-Variables Scope-Global Variable.php" height="200" width="100%"></iframe>
+
+        <br>
+        <br>
+        A variable declared <strong>within</strong> a function has a LOCAL SCOPE and can only be accessed within that function. 
+        <br>
+        Example:- 
+        <br>
+        <b><u>Variable with local scope: </u></b>
+        <br>
+        <iframe src="6. PHP Variables-Variables Scope-Local Variable.php" height="150" width="100%"></iframe>
+
+        <br>
+        <p class="edit1">
+            You can have local variables with the same name in different functions, because local variables are only recognized by the function in which they are declared. 
+        </p>
+       </div>
+
+       <hr>
+       <br>
+       <br>
+       <hr>
+
+       <h2>
+        PHP The global Keyword 
+       </h2>
+
+       <div>
+        The <span class="edit">global</span> keyword is used to access a global variable from within a function. 
+        <br>
+        To do this, use the <span class="edit">global</span> keyword before the variables (inside the function). 
+        <br>
+        Example:- 
+        <br>
+        <iframe src="6. PHP Variables-Variables Scope-Global Variable In Function.php" height="40" width="100%"></iframe>
+
+        <br>
+        PHP also stores all global variables in an array called <span class="edit">$GLOBALS[<i>index</i>]</span>. The <span class="edit"><i>index</i></span> holds the name of the variable. This array is also accessible from within functions and can be used to update global variables directly. 
+        <br>
+        The example above can be rewritten like this. 
+        <br>
+        Example:- 
+        <br>
+        <iframe src="6. PHP Variables-Variables Scope-Global Variable In Function 1.php" height="40" width="100%"></iframe>
+       </div>
+
+       <hr>
+
+       <h2>
+        PHP The static Keyword 
+       </h2>
+
+       <div>
+        Normally, when a function is completed/executed, all of its variables are deleted. However, sometimes we want a local variable NOT to be deleted. We need it for a further job. 
+        <br>
+        To do this, use the <span class="edit">static</span> keyword when you first declare the variable. 
+        <br>
+        Example:- 
+        <br>
+        <iframe src="6. PHP Variables-Variables Scope-Static Variable.php" height="80" width="100%"></iframe>
+
+        <br>
+        Then, each time the function is called, that variable will still have the information it contained from the last time the function was called. 
+        <br>
+        <strong>Note: </strong>The variable is still local to the function. 
+       </div>
+    </body>
+</html>

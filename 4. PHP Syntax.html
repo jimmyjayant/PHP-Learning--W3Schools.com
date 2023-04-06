@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Syntax    
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                line-height:1.5;
+                font-size:1rem;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Syntax    
+        </h1>
+
+        <hr>
+
+        <div>
+            A PHP Script is executed on the server, and the plain HTML result is sent back to the browser. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Basic PHP Syntax 
+        </h2>
+
+        <div>
+            A PHP Script can be placed anywhere in the document. 
+            <br>
+            A PHP Script starts with <span class="edit">&lt;?php</span> and ends with <span class="edit">?&gt;</span>: 
+            <br>
+            <p style="border:1px solid grey;padding:2rem;">
+             &lt;?php
+             <br>
+             // PHP code goes here 
+             <br>
+             ?&gt; 
+            </p>
+
+            <br>
+
+            The default file extension for PHP files is "<span class='edit'>.php</span>". 
+            <br>
+            A PHP file normally contains HTML tags, and some PHP scripting code. 
+            <br>
+            Below, we have an example of a simple PHP file, with a PHP script that uses a built-in PHP function "<span class='edit'>echo</span>" to output the text "Hello World!" on a web page. 
+            <br>
+            <iframe src="4. PHP Syntax-echo Hello.php" height="70" width="100%"></iframe>
+            
+            <br>
+            <strong>Note:</strong> PHP statements end with a semicolon (<span class='edit'> ; </span>). 
+        </div>
+
+        <hr>
+        <br>
+        <hr>
+
+        <h2>
+            PHP Case Sensitivity 
+        </h2>
+
+        <div>
+            In PHP, keywords (e.g. <span class="edit">if</span>, <span class="edit">else</span>, <span class="edit">while</span>, <span class="edit">echo</span>, etc.), classes, functions, and user-defined functions are not case-sensitive. 
+            <br>
+            In the example below, all three echo statements below are <strong>equal</strong> and <strong>legal</strong>. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="4. PHP Syntax-different echo.php" height="70" width="100%"></iframe>
+            <br>
+            <p class="edit1">
+                <strong>Note: </strong>However; all variable names are case-sensitive! 
+            </p>
+            <br>
+            Look at the example below; only the first statement will display the value of the <span class="edit">$color</span> variable! This is because <span class="edit">$color</span>, <span class="edit">$COLOR</span>, and <span class="edit">$coLOR</span> are treated as three different variables. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="4. PHP Syntax-different variable.php" width="100%" height="200"></iframe>
+        </div>
+    </body>
+</html>
