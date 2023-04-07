@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Constants       
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                line-height:1.5;
+                font-size:1rem;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Constants        
+        </h1>
+
+        <hr>
+
+        <div>
+            Constants are like variables except that once they are defined they cannot be changed or undefined.  
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP Constants 
+        </h2>
+
+        <div>
+            A constant is an identifier (name) for a simple value. The value cannot be changed during the script. 
+            <br>
+            A valid constant name starts with a letter or underscore (no $ sign before the constant name). 
+            <br>
+            <strong>Note: </strong> Unlike variables, constants are automatically global across the entire script. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Create a PHP Constant 
+        </h2>
+
+        <div>
+            To create a constant, use the <span class="edit">define()</span> function. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:1px solid grey;padding:1rem;">
+            define(<i>name, value, case-insensitive</i>) 
+            </p>
+
+            <br>
+            Parameters: 
+            <br>
+            <ul>
+                <li><i>name</i>: Specifies the name of the constant</li>
+                <li><i>value</i>: Specifies the value of the constant</li>
+                <li><i>case-insensitive</i>: Specifies whether the constant name should be case-insensitive. Default is false</li>
+            </ul>
+
+            <br>
+            Example:- 
+            <br>
+            <b><u>Create a constant with a <strong>case-sensitive </strong>name: </u></b>
+            <br>
+            <iframe src="12. PHP Constants-constant case-sensitive.php" height="60" width="100%"></iframe>
+
+            <br>
+            <br>
+            Example:- 
+            <br>
+            <b><u>Create a constant with a <strong>case-insensitive</strong> name: </u></b>
+            <br>
+            <p style="color:red;font-weight:bold;" class="edit1">
+            Defining Case-Insensitive constants has been removed in PHP 8.0 
+            </p>
+            <iframe src="12. PHP Constants-constant case-insensitive.php" height="60" width="100%"></iframe>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            PHP Constant Arrays 
+        </h2>
+
+        <div>
+            In PHP7, you can create an Array constant using the <span class="edit">define()</span> function. 
+            <br>
+            Example: 
+            <br>
+            <b><u>Create an Array constant: </u></b>
+            <br>
+            <iframe src="12. PHP Constants-array constant.php" height="40" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Constants are Global 
+        </h2>
+
+        <div>
+            Constants are automatically global and can be used across the entire script. 
+            <br>
+            Example:- 
+            <br>
+            <b><u>This example uses a constant inside a function, even if it is defined outside the function.</u></b>
+            <br>
+            <iframe src="12. PHP Constants-constant inside function.php" height="40" width="100%"></iframe>
+        </div>
+
+        
+    </body>
+</html>

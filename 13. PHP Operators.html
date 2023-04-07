@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Operators       
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                line-height:1.5;
+                font-size:1rem;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+
+            .table1 {
+                width:100%;
+                border:0.1rem solid #ddd;
+                border-collapse:collapse;
+            }
+
+            .table1 tr {
+                height:3rem;
+            }
+
+            .table1 tr:nth-child(even) {
+                background-color:#f1f1f1;
+            }
+
+            .table1 th {
+                text-align:left;
+                padding:0.5rem;
+            }
+
+            .table1 td {
+                padding:0.5rem;
+            }
+
+            td a {
+                text-decoration:none;
+                display:inline-block;
+                padding:0.5rem 1rem;
+                color:white;
+                background:lightgreen;
+                border-radius:0.5rem;
+            }
+
+            a:hover {
+                background:green;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Operators       
+        </h1>
+
+        <hr>
+
+        <h2>
+            PHP Operators 
+        </h2>
+
+        <div>
+            Operators are used to perform operations on variables and values. 
+            <br>
+            PHP divides the operators in the following groups: 
+            <br>
+            <ul>
+                <li>Arithmetic operators</li>
+                <li>Assignment operators</li>
+                <li>Comparison operators</li>
+                <li>Increment/Decrement operators</li>
+                <li>Logical operators</li>
+                <li>String operators</li>
+                <li>Array operators</li>
+                <li>Conditional assignment operators</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP Arithmetic Operators 
+        </h2>
+
+        <div>
+            The PHP arithmetic operators are used with numeric values to perform common arithmetical operations, such as addition, subtraction, multiplication, etc. 
+            <br>
+            <br>
+            <table class="table1">
+                <tr>
+                    <th>Operator</th>
+                    <th>Name</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                    <th>Show it</th>
+                </tr>
+                <tr>
+                    <td>+</td>
+                    <td>Addition</td>
+                    <td>$x + $y</td>
+                    <td>Sum of $x and $y</td>
+                    <td><a href="13. PHP Operators-addition.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>Subtraction</td>
+                    <td>$x - $y</td>
+                    <td>Difference of $x and $y</td>
+                    <td><a href="13. PHP Operators-subtraction.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>Multiplication</td>
+                    <td>$x * $y</td>
+                    <td>Product of $x and $y</td>
+                    <td><a href="13. PHP Operators-multiplication.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>Division</td>
+                    <td>$x / $y</td>
+                    <td>Quotient of $x and $y</td>
+                    <td><a href="13. PHP Operators-division.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>Modulus</td>
+                    <td>$x % $y</td>
+                    <td>Remainder of $x divided by $y</td>
+                    <td><a href="13. PHP Operators-modulus.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>**</td>
+                    <td>Exponentiation</td>
+                    <td>$x ** $y</td>
+                    <td>Result of raising $x to the $y'th power</td>
+                    <td><a href="13. PHP Operators-exponentiation.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP Assignment Operators 
+        </h2>
+
+        <div>
+            The PHP assignment operators are used with numeric values to write a value to a variable. 
+            <br>
+            The basic assignment operator in PHP is "=". It means that the left operand gets set to the value of the assignment expression on the right. 
+            <br>
+            <br>
+            <table class="table1">
+                <tr>
+                    <th>Assignment</th>
+                    <th>Same as...</th>
+                    <th>Description</th>
+                    <th>Show it</th>
+                </tr>
+                <tr>
+                    <td>x = y</td>
+                    <td>x = y</td>
+                    <td>The left operand gets set to the value of the expression on the right</td>
+                    <td><a href="13. PHP Operators-assignment.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>x += y</td>
+                    <td>x = x + y</td>
+                    <td>Addition</td>
+                    <td><a href="13. PHP Operators-assignment addition.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>x -= y</td>
+                    <td>x = x - y</td>
+                    <td>Subtraction</td>
+                    <td><a href="13. PHP Operators-assignment subtraction.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>x *= y</td>
+                    <td>x = x * y</td>
+                    <td>Multiplication</td>
+                    <td><a href="13. PHP Operators-assignment multiplication.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>x /= y</td>
+                    <td>x = x / y</td>
+                    <td>Division</td>
+                    <td><a href="13. PHP Operators-assignment division.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>x %= y</td>
+                    <td>x = x % y</td>
+                    <td>Modulus</td>
+                    <td><a href="13. PHP Operators-assignment modulus.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP Comparison Operators 
+        </h2>
+
+        <div>
+            The PHP Comparison operators are used to compare two values (number or string). 
+            <br>
+            <br>
+            <table class="table1">
+                <tr>
+                    <th>Operator</th>
+                    <th>Name</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                    <th>Show it</th>
+                </tr>
+                <tr>
+                    <td>==</td>
+                    <td>Equal</td>
+                    <td>$x == $y</td>
+                    <td>Returns true if $x is equal to $y</td>
+                    <td><a href="13. PHP Operators-equal.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>===</td>
+                    <td>Identical</td>
+                    <td>$x === $y</td>
+                    <td>Returns true if $x is equal to $y, and they are of the same type</td>
+                    <td><a href="13. PHP Operators-identical.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>!=</td>
+                    <td>Not equal</td>
+                    <td>$x != $y</td>
+                    <td>Returns true if $x is not equal to $y</td>
+                    <td><a href="13. PHP Operators-not equal.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>&lt;&gt;</td>
+                    <td>Not equal</td>
+                    <td>$x &lt;&gt; $y</td>
+                    <td>Returns true if $x is not equal to $y</td>
+                    <td><a href="13. PHP Operators-not equal 1.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>!==</td>
+                    <td>Not identical</td>
+                    <td>$x !=== $y</td>
+                    <td>Returns true if $x is not equal to $y, or they are not of the same type</td>
+                    <td><a href="13. PHP Operators-not identical.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>&gt;</td>
+                    <td>Greater than</td>
+                    <td>$x &gt; $y</td>
+                    <td>Returns true if $x is greater than $y</td>
+                    <td><a href="13. PHP Operators-greater than.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>&lt;</td>
+                    <td>Less than</td>
+                    <td>$x &lt; $y</td>
+                    <td>Returns true if $x is less than $y</td>
+                    <td><a href="13. PHP Operators-less than.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>&gt;=</td>
+                    <td>Greater than or equal to</td>
+                    <td>$x &gt;= $y</td>
+                    <td>Returns true if $x is greater than or equal to $y</td>
+                    <td><a href="13. PHP Operators-greater than or equal to.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>&lt;=</td>
+                    <td>Less than or equal to</td>
+                    <td>$x &lt;= $y</td>
+                    <td>Returns true if $x is less than or equal to $y</td>
+                    <td><a href="13. PHP Operators-less than or equal to.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>&lt;=&gt;</td>
+                    <td>Spaceship</td>
+                    <td>$x &lt;=&gt; $y</td>
+                    <td>Returns an integer less than, equal to, or greater than zero, depending on if $x is less than, equal to, or greater than $y. Introduced in PHP 7.</td>
+                    <td><a href="13. PHP Operators-spaceship.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP Increment / Decrement Operators 
+        </h2>
+
+        <div>
+            The PHP increment operators are used to increment a variable's value. 
+            <br>
+            The PHP decrement operators are used to decrement a variable's value. 
+            <br>
+            <br>
+            <table class="table1">
+                <tr>
+                    <th>Operator</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Show it</th>
+                </tr>
+                <tr>
+                    <td>++$x</td>
+                    <td>Pre-increment</td>
+                    <td>Increments $x by one, then returns $x</td>
+                    <td><a href="13. PHP Operators-pre increment.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>$x++</td>
+                    <td>Post-increment</td>
+                    <td>Returns $x, then increments $x by one</td>
+                    <td><a href="13. PHP Operators-post increment.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>--$x</td>
+                    <td>Pre-decrement</td>
+                    <td>Decrements $x by one, then returns $x</td>
+                    <td><a href="13. PHP Operators-pre decrement.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>$x--</td>
+                    <td>Post-decrement</td>
+                    <td>Returns $x, then decrements $x by one</td>
+                    <td><a href="13. PHP Operators-post decrement.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP Logical Operators 
+        </h2>
+
+        <div>
+            The PHP logical operators are used to combine conditional statements. 
+            <br>
+            <br>
+            <table class="table1">
+                <tr>
+                    <th>Operator</th>
+                    <th>Name</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                    <th>Show it</th>
+                </tr>
+                <tr>
+                    <td>and</td>
+                    <td>And</td>
+                    <td>$x and $y</td>
+                    <td>True if both $x and $y are true</td>
+                    <td><a href="13. PHP Operators-and.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>or</td>
+                    <td>Or</td>
+                    <td>$x or $y</td>
+                    <td>True if either $x or $y is true</td>
+                    <td><a href="13. PHP Operators-or.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>xor</td>
+                    <td>Xor</td>
+                    <td>$x xor $y</td>
+                    <td>True if either $x or $y is true, but not both</td>
+                    <td><a href="13. PHP Operators-xor.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>&&</td>
+                    <td>And</td>
+                    <td>$x && $y</td>
+                    <td>True if both $x and $y are true</td>
+                    <td><a href="13. PHP Operators-and 1.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>||</td>
+                    <td>Or</td>
+                    <td>$x || $y</td>
+                    <td>True if either $x or $y is true</td>
+                    <td><a href="13. PHP Operators-or 1.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>!</td>
+                    <td>Not</td>
+                    <td>!$x</td>
+                    <td>True if $x is not true</td>
+                    <td><a href="13. PHP Operators-not.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP String Operators 
+        </h2>
+
+        <div>
+            PHP has two operators that are specially designed for strings. 
+            <br>
+            <br>
+            <table class="table1">
+                <tr>
+                    <th>Operator</th>
+                    <th>Name</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                    <th>Show it</th>
+                </tr>
+                <tr>
+                    <td>.</td>
+                    <td>Concatenation</td>
+                    <td>$txt1 . $txt2</td>
+                    <td>Concatenation of $txt1 and $txt2</td>
+                    <td><a href="13. PHP Operators-concatenation.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>.=</td>
+                    <td>Concatenation assignment</td>
+                    <td>$txt1 .= $txt2</td>
+                    <td>Appends $txt2 to $txt1</td>
+                    <td><a href="13. PHP Operators-concatenation assignment.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP Array Operators 
+        </h2>
+
+        <div>
+            The PHP array operators are used to compare arrays. 
+            <br>
+            <br>
+            <table class="table1">
+                <tr>
+                    <th>Operator</th>
+                    <th>Name</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                    <th>Show it</th>
+                </tr>
+                <tr>
+                    <td>+</td>
+                    <td>Union</td>
+                    <td>$x + $y</td>
+                    <td>Union of $x and $y</td>
+                    <td><a href="13. PHP Operators-union.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>==</td>
+                    <td>Equality</td>
+                    <td>$x == $y</td>
+                    <td>Returns true if $x and $y have the same key/value pairs</td>
+                    <td><a href="13. PHP Operators-equality.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>===</td>
+                    <td>Identity</td>
+                    <td>$x === $y</td>
+                    <td>Returns true if $x and $y have the same key/value pairs in the same order and of the same types</td>
+                    <td><a href="13. PHP Operators-identity.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>!=</td>
+                    <td>Inequality</td>
+                    <td>$x != $y</td>
+                    <td>Returns true if $x is not equal to $y</td>
+                    <td><a href="13. PHP Operators-inequality.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>&lt;&gt;</td>
+                    <td>Inequality</td>
+                    <td>$x &lt;&gt; $y</td>
+                    <td>Returns true if $x is not equal to $y</td>
+                    <td><a href="13. PHP Operators-inequality 1.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>!==</td>
+                    <td>Non-identity</td>
+                    <td>$x !== $y</td>
+                    <td>Returns true if $x is not identical to $y</td>
+                    <td><a href="13. PHP Operators-non identity.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP Conditional Assignment Operators 
+        </h2>
+
+        <div>
+            The PHP conditional assignment operators are used to set a value depending on conditions. 
+            <br>
+            <br>
+            <table class="table1">
+                <tr>
+                    <th>Operator</th>
+                    <th>Name</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                    <th>Show it</th>
+                </tr>
+                <tr>
+                    <td>?:</td>
+                    <td>Ternary</td>
+                    <td>$x = expr1 ? expr2 : expr3</td>
+                    <td>
+                        Returns the value of $x.
+                        <br>
+                        The value of $x is expr2 if expr1 = TRUE. 
+                        <br>
+                        The value of $x is expr3 if expr1 = FALSE.
+                    </td>
+                    <td><a href="13. PHP Operators-ternary.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+                <tr>
+                    <td>??</td>
+                    <td>Null coalescing</td>
+                    <td>$x = expr1 ?? expr2</td>
+                    <td>
+                        Returns the value of $x. 
+                        <br>
+                        The value of $x is expr1 if expr1 exists, and is not NULL. 
+                        <br>
+                        If expr1 does not exist, or is NULL, the value of $x is expr2. 
+                        <br>
+                        Introduced in PHP 7. 
+                    </td>
+                    <td><a href="13. PHP Operators-null coalescing.php" target="_blank">Try it &gt;&gt;</a></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
