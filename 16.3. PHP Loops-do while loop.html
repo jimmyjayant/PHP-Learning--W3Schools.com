@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP do while Loop            
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                line-height:1.5;
+                font-size:1rem;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP do while Loop         
+        </h1>
+
+        <hr>
+
+        <div>
+            The <span class="edit">do...while</span> loop - Loops through a block of code once, and then repeats the loop as long as the specified condition is true. 
+        </div>
+
+        <hr>
+
+        <h2>
+            The PHP do...while Loop 
+        </h2>
+
+        <div>
+            The <span class="edit">do...while</span> loop will always execute the block of code once, it will then check the condition, and repeat the loop while the specified condition is true. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:1px solid grey;padding:2rem;">
+            do {
+                <br>
+                <i>code to be executed;</i>
+                <br>
+            } while (<i>condition is true</i>); 
+            </p>
+
+            <br>
+            <b>Examples</b>
+            <br>
+            The example below first sets a variable $x to 1 ($x = 1). Then, the do while loop will write some output, and then increment the variable $x with 1. Then the condition is checked (is $x less than, or equal to 5?), and loop will continue to run as long as $x is less than,or equal to 5. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="16.3. PHP Loops-do while loop 1.php" height="200" width="100%"></iframe>
+            <br>
+            <p class="edit1">
+                <strong>Note: </strong>In a <span class="edit">do...while</span> loop the condition is tested AFTER executing the statements within the loop. This means that the <span class="edit">do...while</span> loop will execute its statements at least once, even if the condition is false. 
+            </p>
+
+            <br>
+            This example sets the $x variable to 6, then it runs the loop, <strong>and then the condition is checked: </strong>
+            <br>
+            Example:- 
+            <br>
+            <iframe src="16.3. PHP Loops-do while loop 2.php" height="50" width="100%"></iframe>
+        </div>
+    </body>
+</html>

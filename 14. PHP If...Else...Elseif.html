@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP If...Else...Elseif         
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                line-height:1.5;
+                font-size:1rem;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP if...else...elseif Statements        
+        </h1>
+
+        <hr>
+
+        <div>
+            Conditional Statements are used to perform different actions based on different conditions. 
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP Conditional Statements 
+        </h2>
+
+        <div>
+            Very often when you write code, you want to perform different actions for different conditions. You can use conditional statements in your code to do this. 
+            <br>
+            In PHP we have the following conditional statements: 
+            <br>
+            <ul>
+                <li><span class="edit">if</span> statement - executes some code if one condition is true</li>
+                <li><span class="edit">if...else</span> statement - executes some code if a condition is true and another code if that condition is false</li>
+                <li><span class="edit">if...elseif...else</span> statement - executes different codes for more than two conditions</li>
+                <li><span class="edit">switch</span> statement - selects one of many blocks of code to be executed</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP  - The if Statement 
+        </h2>
+
+        <div>
+            The <span class="edit">if</span> statement executes some code if one condition is true. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:1px solid grey;padding:2rem;">
+            if (condition) {
+                <br>
+                <i>code to be executed if condition is true;</i>
+                <br>
+            }
+            </p>
+
+            <br>
+            Example:- 
+            <br>
+            <b><u>Output "Have a good day!" if the current time (HOUR) is less than 20: </u></b>
+            <br>
+            <iframe src="14. PHP If...Else...Elseif-if.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP - The if...else Statement 
+        </h2>
+
+        <div>
+            The <span class="edit">if...else</span> statement executes some code if a condition is true and another code if that condition is false. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:1px solid grey;padding:2rem;">
+            if (condition) {
+                <br>
+                <i>code to be executed if condition is true;</i>
+                <br>
+            } else {
+                <br>
+                <i>code to be executed if conditon is false;</i>
+                <br>
+            }
+            </p>
+
+            <br>
+            Example:- 
+            <br>
+            <b><u>Output "Have a good day!" if the current time is less than 20, and "Have a good night!" otherwise: </u></b>
+            <br>
+            <iframe src="14. PHP If...Else...Elseif-if else.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP - The if...elseif...else Statement 
+        </h2>
+
+        <div>
+            The <span class="edit">if...elseif...else</span> statement executes different codes for more than two conditions. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:1px solid grey;padding:2rem;">
+            if (condition) {
+                <br>
+                <i>code to be executed if this condition is true;</i>
+                <br>
+            }
+            <br>
+            elseif (condition) {
+                <br>
+                <i>code to be executed if first condition is false and this condition is true;</i>
+                <br>
+            }
+            <br>
+            else {
+                <br>
+                <i>code to be executed if all conditions are false;</i>
+                <br>
+            } 
+            </p>
+
+            <br>
+            Example:- 
+            <br>
+            <b><u>Output "Have a good morning!" if the current time is less than 10, and "Have a good day!" if the current time is less than 20. Otherwise it will output "Have a good night!": </u></b>
+            <br>
+            <iframe src="14. PHP If...Else...Elseif-if elseif else.php" height="100" width="100%"></iframe>
+        </div>
+
+    </body>
+</html>

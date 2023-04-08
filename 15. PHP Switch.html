@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Switch          
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                line-height:1.5;
+                font-size:1rem;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP switch Statement        
+        </h1>
+
+        <hr>
+
+        <div>
+            The <span class="edit">switch</span> statement is used to perform different actions based on different conditions. 
+        </div>
+
+        <hr>
+
+        <h2>
+            The PHP switch Statement 
+        </h2>
+
+        <div>
+            Use the <span class="edit">switch</span> statement to <b>select one of many blocks of code to be executed.</b>
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:1px solid grey;padding:2rem;">
+            switch (n) {
+                <br>
+                case <i>label1</i>: 
+                <br>
+                <i>code to be executed if n=label1;</i>
+                <br>
+                break;
+                <br>
+                case <i>label2</i>: 
+                <br>
+                <i>code to be executed if n=label2;</i>
+                <br>
+                break;
+                <br>
+                case <i>label3</i>: 
+                <br>
+                <i>code to be executed if n=label3;</i>
+                <br>
+                break;
+                <br>
+                ... 
+                <br>
+                default: 
+                <br>
+                <i>code to be executed if n is different from all labels;</i>
+                <br>
+            }
+            </p>
+
+            <br>
+            <br>
+            This is how it works: First we have a single expression <i>n</i> (most often a variable), that is evaluated once. The value of the expression is then compared with the values for each case in the structure. If there is a match, the block of code associated with that case is executed. Use <span class="edit">break</span> to prevent the code from running into the next case automatically. The <span class="edit">default</span> statement is used if no match is found. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="15. PHP Switch-switch.php" height="200" width="100%"></iframe>
+        </div>
+    </body>
+</html>
