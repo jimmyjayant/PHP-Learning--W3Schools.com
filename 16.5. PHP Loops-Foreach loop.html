@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP foreach Loop           
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                line-height:1.5;
+                font-size:1rem;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP foreach Loop          
+        </h1>
+
+        <hr>
+        
+        <div>
+            The <span class="edit">foreach</span> loop - Loops through a block of code for each element in an array. 
+        </div>
+
+        <hr>
+
+        <h2>
+            The PHP foreach Loop 
+        </h2>
+
+        <div>
+            The <span class="edit">foreach</span> loop works only on arrays, and is used to loop through each key/value pair in an array. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:1px solid grey;padding:2rem;">
+              foreach ($array as $value) {
+                <br>
+                <i>code to be executed;</i>
+                <br>
+              }
+            </p>
+
+            <br>
+            For every loop iteration, the value of the current array element is assigned to $value and the array pointer is moved by one, until it reaches the last array element. 
+            <br>
+            <b>Examples</b>
+            <br>
+            The following example will output the values of the given array ($colors). 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="16.5. PHP Loops-Foreach loop 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+
+            The following example will output both the keys and the values of the given array ($age). 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="16.5. PHP Loops-Foreach loop 2.php" height="100" width="100%"></iframe>
+        </div>
+    </body>
+</html>
