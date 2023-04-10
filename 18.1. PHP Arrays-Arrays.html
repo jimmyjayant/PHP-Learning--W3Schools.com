@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Arrays 
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:Verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Arrays 
+        </h1>
+
+        <div>
+            An array stores multiple values in one single variable. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="18.1. PHP Arrays-Arrays-Example 1.php" height="40" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            What is an Array? 
+        </h2>
+
+        <div>
+            An array is a special variable, which can hold more than one value at a time. 
+            <br>
+            If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this. 
+            <br>
+            <p style="border:1px solid grey;padding:2rem;">
+             $cars1 = "Volvo";
+             <br>
+             $cars2 = "BMW";
+             <br>
+             $cars3 = "Toyota";
+            </p>
+
+            <br>
+            However, what if you want to loop through the cars and find a specific one? And what if you had not 3 cars, but 300? 
+            <br>
+            The solution is to create an array!
+            <br>
+            An array can hold many values under a single name, and you can access the values by referring to an index number. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Create an Array in PHP 
+        </h2>
+
+        <div>
+            In PHP, the <span class="edit">array()</span> function is used to create an array. 
+            <br>
+            <p style="border:1px solid grey;padding:2rem;">
+            array(); 
+            </p>
+            <br>
+            In PHP, there are three types of arrays: 
+            <br>
+            <ul>
+                <li><b>Indexed arrays</b> - Arrays with a numeric index</li>
+                <li><b>Associative arrays</b> - Arrays with named keys</li>
+                <li><b>Multidimensional arrays</b> - Arrays containing one or more arrays</li>
+            </ul>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            Get The Length of an Array - The count() Function 
+        </h2>
+
+        <div>
+            The <span class="edit">count()</span> function is used to return the length (the number of elements) of an array. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="18.1. PHP Arrays-Arrays-length of array 1.php" height="70" width="100%"></iframe>
+        </div>
+    </body>
+</html>

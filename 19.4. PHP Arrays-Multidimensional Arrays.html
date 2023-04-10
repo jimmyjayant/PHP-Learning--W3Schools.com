@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Multidimensional Arrays 
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+
+            .table1 {
+                width:100%;
+                border:0.1rem solid #ddd;
+                border-collapse:collapse;
+            }
+
+            .table1 tr {
+                height:3rem;
+            }
+
+            .table1 tr:nth-child(even) {
+                background-color:#f1f1f1;
+            }
+
+            .table1 th {
+                text-align:left;
+                padding:0.5rem;
+            }
+
+            .table1 td {
+                padding:0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+       <h1>
+        PHP Multidimensional Arrays 
+       </h1>
+
+       <hr>
+
+       <div>
+          In the previous pages, we have described arrays that are a single list of key/value pairs. 
+          <br>
+          However, sometimes you want to store values with more than one key. For this, we have multidimensional arrays. 
+       </div>
+
+       <hr>
+
+       <h2>
+        PHP - Multidimensional Arrays 
+       </h2>
+
+       <div>
+        A multidimensional array is an array containing one or more arrays. 
+        <br>
+        PHP supports multidimensional arrays that are two, three, four, five, or more levels deep. However, arrays more than three levels deep are hard to manage for most people. 
+        <br>
+        <div class="edit1">
+            <b>The dimension of an array indicates the number of indices you need to select an element.</b>
+            <br>
+            <ul>
+                <li>For a two-dimensional array you need two indices to select an element</li>
+                <li>For a three-dimensional array you need three indices to select an element</li>
+            </ul>
+        </div>
+       </div>
+
+       <hr>
+
+       <h2>
+        PHP - Two-dimensional Arrays 
+       </h2>
+
+       <div>
+        A two-dimensional array is an array of arrays (a three-dimensional array is an array of arrays of arrays). 
+        <br>
+        First, take a look at the following table: 
+        <br>
+        <br>
+        <table class="table1">
+            <tr>
+                <th>Name</th>
+                <th>Stock</th>
+                <th>Sold</th>
+            </tr>
+            <tr>
+                <td>Volvo</td>
+                <td>22</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>BMW</td>
+                <td>15</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>Saab</td>
+                <td>5</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Land Rover</td>
+                <td>17</td>
+                <td>15</td>
+            </tr>
+        </table>
+
+        <br>
+        We can store the data from the table above in a two-dimensional array, like this: 
+        <br>
+        <p style="border:0.1rem solid grey;padding:2rem;">
+           $cars = array(
+            <br>
+            array("Volvo", 22, 18),
+            <br>
+            array("BMW", 15, 13),
+            <br>
+            array("Saab", 5, 2),
+            <br>
+            array("Land Rover", 17, 15)
+            <br>
+           );
+        </p>
+        
+        <br>
+        Now the two-dimensional $cars array contains four arrays, and it has two indices: row and column. 
+        <br>
+        To get access to the elements of the $cars array we must point to the two indices (row and column). 
+        <br>
+        Example:- 
+        <br>
+        <iframe src="19.4. PHP Arrays-Multidimensional Arrays-2d array.php" height="100" width="100%"></iframe>
+
+        <br>
+        <br>
+        We can also put a <span class="edit">for</span> loop inside another <span class="edit">for</span> loop to get the elements of the $cars array (we still have to point to the two indices). 
+        <br>
+        Example:- 
+        <br>
+        <iframe src="19.4. PHP Arrays-Multidimensional Arrays-2d array 1.php" height="500" width="100%"></iframe>
+       </div>
+
+
+
+    </body>
+</html>
