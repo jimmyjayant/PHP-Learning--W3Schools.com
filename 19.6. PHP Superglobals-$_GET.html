@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Superglobal - $_GET  
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Superglobal - $_GET   
+        </h1>
+
+        <hr>
+
+        <div>
+            Super global variables are built-in variables that are always available in all scopes. 
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP $_GET  
+        </h2>
+
+        <div>
+            PHP $_GET is a PHP super global variable which is used to collect form data after submitting a HTML form with method="get". 
+            <br>
+            $_GET can also collect data sent in the URL. 
+            <br>
+            Assume we have a HTML page that contains a hyperlink with parameters: 
+            <br>
+            <p style="border:0.1rem solid grey;padding:2rem;">
+            &lt;html&gt; 
+            <br>
+            &lt;body&gt; 
+            <br>
+            <br>
+            &lt;a href="19.6. PHP Superglobals-$_GET-Example 1.php?subject=PHP&web=W3schools.com"&gt;Test $GET&lt;/a&gt; 
+            <br>
+            <br>
+            &lt;/body&gt; 
+            <br>
+            &lt;/html&gt; 
+            </p>
+
+            <br>
+            When a user clicks on the link "TEST $GET", the parameters "subject" and "web" are sent to "19.6. PHP Superglobals-$_GET-Example 1.php", and you can then access their values in "19.6. PHP Superglobals-$_GET-Example 1.php" with $_GET. 
+            <br>
+            The example below shows the code in "19.6. PHP Superglobals-$_GET-Example 1.php". 
+            <br>
+            Example:- 
+            <br>
+            <a href="19.6. PHP Superglobals-$_GET-Example 1.php?subject=PHP&web=W3schools.com" target="frame">Test $GET</a>
+            <br>
+            <br>
+            <iframe src="19.6. PHP Superglobals-$_GET-Example 1.php" height="100" width="100%" name="frame"></iframe>
+        </div>
+    </body>
+</html>

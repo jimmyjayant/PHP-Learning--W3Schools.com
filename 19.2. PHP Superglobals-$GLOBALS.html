@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Superglobal - $GLOBALS 
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:Verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Superglobal - $GLOBALS 
+        </h1>
+
+        <hr>
+
+        <div>
+            Super global variables are built-in variables that are always available in all scopes. 
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP $GLOBALS 
+        </h2>
+
+        <div>
+            $GLOBALS is a PHP super global variable which is used to access global variables from anywhere in the PHP script (also from within functions or methods). 
+            <br>
+            PHP stores all global variables in an array called $GLOBALS[<i>index</i>]. The <i>index</i> holds the name of the variable. 
+            <br>
+            The example below shows how to use the super global variable $GLOBALS. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="19.2. PHP Superglobals-$GLOBALS-Example 1.php" height="40" width="100%"></iframe>
+
+            <br>
+            In the example above, since z is a variable present within the $GLOBALS array, it is also accessible from outside the function! 
+        </div>
+
+        
+    </body>
+</html>
