@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Form Handling 
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+    <h1>
+        PHP Form Handling 
+    </h1>
+
+    <hr>
+
+    <div>
+        The PHP Superglobals $_GET and $_POST are used to collect form-data. 
+    </div>
+
+    <hr>
+
+    <h2>
+        PHP - A Simple HTML Form 
+    </h2>
+
+    <div>
+        The example below displays a simple HTML form with two input fields and a submit button. 
+        <br>
+        Example:- 
+        <br>
+        <form action="21. PHP Forms Handling-Example 1.php" method="post">
+            Name: <input type="text" name="name">
+            <br>
+            E-mail: <input type="text" name="email">
+            <br>
+            <input type="submit">
+            <input type="reset">
+        </form>
+
+        <br>
+        <br>
+        When the user fills out the form above and clicks the submit button, the form data is sent for processing to a PHP file named "21. PHP Forms Handling-Example 1.php". The form data is sent with the HTTP POST method. 
+        <br>
+        To display the submitted data you could simply echo all the variables. The "21. PHP Forms Handling-Example 1.php" looks like this. 
+        <br>
+        <p style="border:0.1rem solid grey;padding:2rem;">
+            &lt;?php
+            <br>
+            echo "Welcome " . $_POST["name"] . "&lt;br&gt;";
+            <br>
+            echo "Your email address is: " . $_POST["email"];
+            <br>
+            ?&gt; 
+        </p>
+
+        <br>
+
+        The output could be something like this: 
+        <br>
+        <p style="border:0.1rem solid grey; padding:2rem;">
+         Welcome John
+         <br>
+         Your email address is: john.doe@example.com 
+        </p>
+
+        <br>
+        <br>
+
+        The same result could also be achieved using the HTTP GET method: 
+        <br>
+        Example:- 
+        <br>
+        <form action="21. PHP Forms Handling-Example 2.php" method="get">
+            Name: <input type="text" name="name1">
+            <br>
+            E-mail: <input type="text" name="email1">
+            <br>
+            <input type="submit">
+            <input type="reset">
+        </form>
+
+        <br>
+        <br>
+        and "21. PHP Forms Handling-Example 2.php" looks like this: 
+        <br>
+        <p style="border:0.1rem solid grey;padding:2rem;">
+            &lt;?php
+            <br>
+            echo "Welcome " . $_GET["name1"] . "&lt;br&gt;";
+            <br>
+            echo "Your email address is: " . $_GET["email1"];
+            <br>
+            ?&gt; 
+        </p>
+
+        <br>
+
+        The code above is quite simple. However, the most important thing is missing. You need to validate form data to protect your script from malicious code. 
+        <br>
+        <p class="edit1">
+            <strong>Think SECURITY when processing PHP forms!</strong>
+            <br>
+            This page does not contain any form validation, it just shows how you can send and retrieve form data. 
+            <br>
+            However, the next pages will show how to process PHP forms with security in mind! Proper validation of form data is important to protect your form from hackers and spammers!             
+        </p>
+    </div>
+
+    <hr>
+    <br>
+    <br>
+    <hr>
+
+    <h2>
+        GET vs. POST 
+    </h2>
+
+    <div>
+        Both GET and POST create an array (e.g. array(key1 => value1, key2 => value2, key3 => value3, ...)). This array holds key/value pairs, where keys are the names of the form controls and values are the input data from the user. 
+        <br>
+        Both GET and POST are treated as $_GET and $_POST. These are superglobals, which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special. 
+        <br>
+        $_GET is an array of variables passed to the current script via the URL parameters. 
+        <br>
+        $_POST is an array of variables passed to the current script via the HTTP POST method. 
+    </div>
+
+    <hr>
+
+    <h2>
+        When to use GET? 
+    </h2>
+
+    <div>
+        Information sent from a form with the GET method is <strong>visible to everyone</strong> (all variable names and values are displayed in the URL). GET also has limits on the amount of information to send. The limitation is about 2000 characters. However, because the variables are displayed in the URL, it is possible to bookmark the page. This can be useful in some cases. 
+        <br>
+        <br>
+        GET may be used for sending non-sensitive data. 
+        <br>
+        <br>
+        <strong>Note: </strong>GET should NEVER be used for sending passwords or other sensitive information! 
+    </div>
+
+    <hr>
+
+    <h2>
+        When to use POST? 
+    </h2>
+
+    <div>
+        Information sent from a form with the POST method is <strong>invisible to others</strong> (all names/values are embedded within the body of the HTTP request) and has <strong>no limits</strong> on the amount of information to send. 
+        <br>
+        Moreover POST supports advanced functionality such as support for multi-part binary input while uploading files to server. 
+        <br>
+        However, because the variables are not displayed in the URL, it is not possible to bookmark the page. 
+        <br>
+        <p class="edit1">
+            <strong>Developers prefer POST for sending form data.</strong>
+        </p>
+        <br>
+        Next, lets see how we can process PHP forms the secure way! 
+    </div>
+    </body>
+</html>
