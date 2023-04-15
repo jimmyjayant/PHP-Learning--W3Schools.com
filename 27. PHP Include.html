@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Include Files  
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:Verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Include Files  
+        </h1>
+
+        <hr>
+
+        <div>
+            The <span class="edit">include</span> (or <span class="edit">require</span>) statement takes all the text/code/markup that exists in the specified file and copies it into the file that uses the include statement. 
+            <br>
+            Including files is very useful when you want to include the same PHP, HTML, or text on multiple pages of a website. 
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP include and require Statements 
+        </h2>
+
+        <div>
+            It is possible to insert the content of one PHP file into another PHP file (before the server executes it), with the include or require statement. 
+            <br>
+            <strong>
+                The include and require statements are identical, except upon failure: 
+            </strong>
+            <br>
+            <ul>
+                <li><span class="edit">require</span> will produce a fatal error (E_COMPILE_ERROR) and stop the script</li>
+                <li><span class="edit">include</span> will only produce a warning (E_WARNING) and the script will continue</li>
+            </ul>
+
+            <br>
+            <br>
+            So, if you want the execution to go on and show users the output, even if the include file is missing, use the include statement. Otherwise, in case of FrameWork, CMS, or a complex PHP application coding, always use the require statement to include a key file to the flow of execution. This will help avoid compromising your application's security and integrity, just in-case one key file is accidentally missing. 
+            <br>
+            Including files saves a lot of work. This means that you can create a standard header, footer, or menu file for all your web pages. Then, when the header needs to be updated, you can only update the header include file. 
+            <br>
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             include '<i>filename</i>'; 
+             <br>
+             <br>
+             or 
+             <br>
+             <br>
+             require '<i>filename</i>';  
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP include Examples 
+        </h2>
+
+        <div>
+            <h3>
+                Example 1
+            </h3>
+
+            Assume we have a standard footer file called "27. PHP Include-footer.php", that looks like this: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?php 
+             <br>
+             echo "&lt;p&gt;Copyright &amp;copy; 1999-" . date("Y") . " W3Schools.com&lt;/p&gt;"; 
+             <br>
+             ?&gt; 
+            </p>
+
+            <br>
+            To include the footer file in a page, use the <span class="edit">include</span> statement. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="27. PHP Include-Example 1.php" height="200" width="100%"></iframe>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h3>
+            Example 2
+        </h3>
+
+        <div>
+            Assume we have a standard menu file called "27. PHP Include-menu.php". 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?php
+             <br>
+             echo '&lt;a href="/default.asp"&gt;Home&lt;/a&gt; - 
+             <br>
+             &lt;a href="/html/default.asp"&gt;HTML Tutorial&lt;/a&gt; - 
+             <br>
+             &lt;a href="/css/default.asp"&gt;CSS Tutorial&lt;/a&gt; - 
+             <br>
+             &lt;a href="/js/default.asp"&gt;JavaScript Tutorial&lt;/a&gt; - 
+             <br>
+             &lt;a href="default.asp"&gt;PHP Tutorial&lt;/a&gt;'; 
+             <br>
+             ?&gt; 
+            </p>
+
+            <br>
+            All pages in the Web site should use this menu file. Here is how it can be done (we are using a &lt;div&gt; element so that the menu easily can be styled with CSS later). 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="27. PHP Include-Example 2.php" height="200" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h3>
+            Example 3 
+        </h3>
+
+        <div>
+            Assume we have a file called "vars.php", with some variables defined. 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?php
+             <br>
+             $color = 'red';
+             <br>
+             $car = 'BMW'; 
+             <br>
+             ?&gt; 
+            </p>
+
+            <br>
+            Then, if we include the "27. PHP Include-vars.php" file, the variables can be used in the calling file. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="27. PHP Include-Example 3.php" height="200" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP include vs. require 
+        </h2>
+
+        <div>
+            The <span class="edit">require</span> statement is also used to include a file into the PHP code. 
+            <br>
+            However, there is one big difference between include and require; when a file is included with the <span class="edit">include</span> statement and PHP cannot find it, the script will continue to execute. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="27. PHP Include-Example 4.php" height="300" width="100%"></iframe>
+
+            <br>
+            <br>
+            If we do the same example using the <span class="edit">require</span> statement, the echo statement will not be executed because the script execution dies after the <span class="edit">require</span> statement returned a fatal error. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="27. PHP Include-Example 5.php" height="300" width="100%"></iframe>
+
+            <br>
+
+            <p class="edit1">
+                Use <span class="edit">require</span> when the file is required by the application. 
+                <br>
+                Use <span class="edit">include</span> when the file is not required and application should continue when file is not found. 
+            </p>
+        </div>
+    </body>
+</html>

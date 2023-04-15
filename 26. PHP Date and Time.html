@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Date and Time 
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:Verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+
+            .table1 {
+                width:100%;
+                border:0.1rem solid #ddd;
+                border-collapse:collapse;
+            }
+
+            .table1 tr {
+                height:3rem;
+            }
+
+            .table1 tr:nth-child(even) {
+                background-color:#f1f1f1;
+            }
+
+            .table1 th {
+                text-align:left;
+                padding:0.5rem;
+            }
+
+            .table1 td {
+                padding:0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Date and Time 
+        </h1>
+
+        <hr>
+
+        <div>
+            The PHP <span class="edit">date()</span> function is used to format a date and/or a time. 
+        </div>
+
+        <hr>
+
+        <h2>
+            The PHP Date() Function 
+        </h2>
+
+        <div>
+            The PHP <span class="edit">date()</span> function formats a timestamp to a more readable date and time. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey;padding:2rem;">
+             date(<i>format, timestamp</i>) 
+            </p>
+
+            <br>
+            <br>
+
+            <table class="table1">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>format</td>
+                    <td>Required. Specifies the format of the timestamp</td>
+                </tr>
+                <tr>
+                    <td>timestamp</td>
+                    <td>Optional. Specifies a timestamp. Default is the current date and time</td>
+                </tr>
+            </table>
+
+            <br>
+
+            <p class="edit1">
+                A timestamp is a sequence of characters, denoting the date and/or time at which a certain event occurred. 
+            </p>
+        </div>
+
+        <hr>
+        
+        <h2>
+            Get a Date 
+        </h2>
+
+        <div>
+            The required <i>format</i> parameter of the date() function specifies how to format the date (or time). 
+            <br>
+            Here are some characters that are commonly used for dates: 
+            <br>
+            <ul>
+                <li>d - Represents the day of the month (01 to 31)</li>
+                <li>m - Represents a month (01 to 12)</li>
+                <li>Y - Represents a year (in four digits)</li>
+                <li>l (lowercase 'L') - Represents the day of the week</li>
+            </ul>
+
+            <br>
+            Other characters, like "/", ".", or "-" can also be inserted between the characters to add additional formatting. 
+            <br>
+            The example below formats today's date in three different ways. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="26. PHP Date and Time-Example 1.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+        <br>
+        <hr>
+
+        <h2>
+            PHP Tip - Automatic Copyright Year 
+        </h2>
+
+        <div>
+            Use the <span class="edit">date()</span> function to automatically update the copyright year on your website. 
+            <br>
+            Example:- 
+            <br>
+            <br>
+            <iframe src="26. PHP Date and Time-Example 2.php" height="50" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Get a Time 
+        </h2>
+
+        <div>
+            Here are some characters that are commonly used for times: 
+            <br>
+            <ul>
+                <li>H - 24-hour format of an hour (00 to 23)</li>
+                <li>h - 12-hour format of an hour with leading zeros (01 to 12)</li>
+                <li>i - Minutes with leading zeros (00 to 59)</li>
+                <li>s - Seconds with leading zeros (00 to 59)</li>
+                <li>a - Lowercase Ante meridiem and Post meridiem (am or pm)</li>
+            </ul>
+
+            <br>
+            The example below outputs the current time in the specified format. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="26. PHP Date and Time-Example 3.php" height="100" width="100%"></iframe>
+            <br>
+            <p class="edit1">
+                Note that the PHP date() function will return the current date/time of the server! 
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>
+            Get Your Time Zone 
+        </h2>
+
+        <div>
+            If the time you got back from the code is not correct, it's probably because your server is in another country or set up for a different timezone. 
+            <br>
+            So, if you need the time to be correct according to a specific location, you can set the timezone you want to use. 
+            <br>
+            The example below sets the timezone to "America/New_York", then outputs the current time in the specified format. 
+            <br>
+            Example:- 
+            <br>
+            <br>
+            <iframe src="26. PHP Date and Time-Example 4.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Create a Date With mktime() 
+        </h2>
+
+        <div>
+            The optional <i>timestamp</i> parameter in the date() function specifies a timestamp. If omitted, the current date and time will be used (as in the examples above). 
+            <br>
+            The PHP <span class="edit">mktime()</span> function returns the Unix timestamp for a date. The Unix timestamp contains the number of seconds between the Unix Epoch (January 1 1970 00:00:00 GMT) and the time specified. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             mktime(<i>hour, minute, second, month, day, year</i>) 
+            </p>
+
+            <br>
+            The example below creates a date and time with the <span class="edit">date()</span> function from a number of parameters in the <span class="edit">mktime()</span> function. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="26. PHP Date and Time-Example 5.php" height="50" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Create a Date From a String With strtotime() 
+        </h2>
+
+        <div>
+            The PHP <span class="edit">strtotime()</span> function is used to convert a human readable date string into a Unix timestamp (the number of seconds since January 1 1970 00:00:00 GMT). 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             strtotime(<i>time, now</i>) 
+            </p>
+            <br>
+            The example below creates a date and time from the <span class="edit">strtotime()</span> function. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="26. PHP Date and Time-Example 6.php" height="50" width="100%"></iframe>
+
+            <br>
+            <br>
+            PHP is quite clever about converting a string to a date, so you can put in various values. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="26. PHP Date and Time-Example 7.php" height="100" width="100%"></iframe>
+
+            <br>
+            However, <span class="edit">strtotime()</span> is not perfect, so remember to check the strings you put in there. 
+        </div>
+
+        <hr>
+
+        <h2>
+            More Date Examples 
+        </h2>
+
+        <div>
+            The example below outputs the dates for the next six Saturdays. 
+            <br>
+            Example:- 
+            <br>
+            <br>
+            <iframe src="26. PHP Date and Time-Example 8.php" height="150" width="100%"></iframe>
+
+            <br>
+            <br>
+            The example below outputs the number of days until 4th of July. 
+            <br>
+            Example:- 
+            <br>
+            <br>
+            <iframe src="26. PHP Date and Time-Example 9.php" height="50" width="100%"></iframe>
+        </div>
+    </body>
+</html>
