@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP File Handling 
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP File Handling 
+        </h1>
+
+        <hr>
+
+        <div>
+            File handling is an important part of any web application. You often need to open and process a file for different tasks. 
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP Manipulating Files 
+        </h2>
+
+        <div>
+            PHP has several functions for creating, reading, uploading, and editing files. 
+            <br>
+
+            <p class="edit1">
+                <strong>
+                    Be careful when manipulating files! 
+                </strong>
+                <br>
+                When you are manipulating files you must be very careful. 
+                <br>
+                You can do a lot of damage if you do something wrong. Common errors are: editing the wrong file, filling a hard-drive with garbage data, and deleting the content of a file by accident. 
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP readfile() Function 
+        </h2>
+
+        <div>
+            The <span class="edit">readfile()</span> function reads a file and writes it to the output buffer. 
+            <br>
+            Assume we have a text file called "28. PHP File Handling-webdictionary.txt", stored on the server, that looks like this. 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             AJAX = Asynchronous JavaScript and XML
+             <br>
+             CSS = Cascading Style Sheets
+             <br>
+             HTML = Hyper Text Markup Language 
+             <br>
+             PHP = PHP Hypertext Preprocessor 
+             <br>
+             SQL = Structured Query Language 
+             <br>
+             SVG = Scalable Vector Graphics 
+             <br>
+             XML = EXtensible Markup Language 
+            </p>
+
+            <br>
+            The PHP code to read the file and write it to the output buffer is as follows (the <span class="edit">readfile()</span> function returns the number of bytes read on success). 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="28. PHP File Handling-Example 1.php" height="200" width="100%"></iframe>
+
+            <br>
+            <br>
+            The <span class="edit">readfile()</span> function is useful if all you want to do is open up a file and read its contents. 
+            <br>
+            The next chapters will teach you more about file handling. 
+        </div>
+    </body>
+</html>

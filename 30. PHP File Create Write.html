@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP File Create/Write   
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP File Create/Write   
+        </h1>
+
+        <hr>
+
+        <div>
+            In this chapter we will teach you how to create and write to a file on the server. 
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP Create File - fopen() 
+        </h2>
+
+        <div>
+            The <span class="edit">fopen()</span> function is also used to create a file. Maybe a little confusing, but in PHP, a file is created using the same function used to open files. 
+            <br>
+            If you use <span class="edit">fopen()</span> on a file that does not exist, it will create it, given that the file is opened for writing (w) or appending (a). 
+            <br>
+            The example below creates a new file called "testfile.txt". The file will be created in the same directory where the PHP code resides. 
+            <br>
+            Example:- 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             $myfile = fopen("testfile.txt", "w"); 
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP File Permissions 
+        </h2>
+
+        <div>
+            If you are having errors when trying to get this code to run, check that you have granted your PHP file access to write information to the hard drive. 
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP Write to File - fwrite() 
+        </h2>
+
+        <div>
+            The <span class="edit">fwrite()</span> function is used to write to a file. 
+            <br>
+            The first parameter of <span class="edit">fwrite()</span> contains the name of the file to write to and the second parameter is the string to be written. 
+            <br>
+            The example below writes a couple of names into a new file called "30. PHP File Create Write-newfile.txt".  
+            <br>
+            Example:- 
+            <br>
+            <iframe src="30. PHP File Create Write-Example 1.php" height="50" width="100%"></iframe>
+
+            <br>
+            <br>
+            Notice that we wrote to the file "30. PHP File Create Write-newfile.txt" twice. Each time we wrote to the file we sent the string $txt that first contained "John Doe" and second contained "Jane Doe". After we finished writing, we closed the file using the <span class="edit">fclose()</span> function. 
+            <br>
+            <br>
+            If we open the "30. PHP File Create Write-newfile.txt" file it would look like this: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             John Doe
+             <br>
+             Jane Doe 
+            </p>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            PHP Overwriting 
+        </h2>
+
+        <div>
+            Now that "30. PHP File Create Write-newfile.txt" contains some data we can show what happens when we open an existing file for writing. All the existing data will be ERASED and we start with an empty file. 
+            <br>
+            In the example below we open our existing file "30. PHP File Create Write-newfile.txt", and write some new data into it. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="30. PHP File Create Write-Example 2.php" height="50" width="100%"></iframe>
+
+            <br>
+            <br>
+            If we now open the "30. PHP File Create Write-newfile.txt" file, both John and Jane have vanished, and only the data we just wrote is present. 
+            <br>
+            <p style="border:0.1rem solid grey;padding:2rem;">
+             Mickey Mouse 
+             <br>
+             Minnie Mouse 
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP Append Text 
+        </h2>
+
+        <div>
+            You can append data to a file by using the "a" mode. The "a" mode appends text to the end of the file, while the "w" mode overrides (and erases) the old content of the file. 
+            <br>
+            In the example below we open our existing file "30. PHP File Create Write-newfile.txt", and append some text to it. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="30. PHP File Create Write-Example 3.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+
+            If we now open the "30. PHP File Create Write-newfile.txt" file, we will see that Donald Duck and Goofy Goof is appended to the end of the file. 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             Mickey Mouse
+             <br>
+             Minnie Mouse
+             <br>
+             Donald Duck
+             <br>
+             Goofy Goof 
+            </p>
+        </div>
+    </body>
+</html>
