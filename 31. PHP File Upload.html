@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP File Upload    
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP File Upload    
+        </h1>
+
+        <hr>
+
+        <div>
+            With PHP, it is easy to upload files to the server.
+            <br>
+            However, with ease comes danger, so always be careful when allowing file uploads! 
+        </div>
+
+        <hr>
+
+        <h2>
+            Configure The "php.ini" File 
+        </h2>
+
+        <div>
+            First, ensure that PHP is configured to allow file uploads. 
+            <br>
+            In your "php.ini" file, search for the <span class="edit">file_uploads</span> directive, and set it to On. 
+            <br>
+            <p style="border:0.1rem solid grey;padding:2rem;">
+             fil_uploads = On 
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>
+            Create The HTML Form 
+        </h2>
+
+        <div>
+            Next, create a HTML form that allow users to choose the image file they want to upload. 
+            <br>
+            Example:- 
+            <br>
+            <form action="31. PHP File Upload-upload.php" method="post" enctype="multipart/form-data">
+                Select image to upload: 
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <input type="submit" value="Upload Image" name="submit">
+            </form>
+
+            <br>
+            <br>
+            Some rules to follow for the HTML form above: 
+            <br>
+            <ul>
+                <li>Make sure that the form uses method="post"</li>
+                <li>The form also needs the following attribute: enctype="multipart/form-data". It specifies which content-type to use when submitting the form</li>
+            </ul>
+
+            <br>
+            <br>
+            Without the requirements above, the file upload will not work. 
+            <br>
+            Other things to notice: 
+            <br>
+            <ul>
+                <li>The type="file" attribute of the &lt;input&gt; tag shows the input field as a file-select control, with a "Browse" button next to the input control</li>
+            </ul>
+
+            <br>
+
+            The form above sends data to a file called "31. PHP File Upload-upload.php", which we will create next. 
+        </div>
+
+        <hr>
+        <br>
+        <hr>
+
+        <h2>
+            Create The Upload File PHP Script 
+        </h2>
+
+        <div>
+            The "31. PHP File Upload-upload.php" file contains the code for uploading a file. 
+            <br>
+            PHP script explained: 
+            <br>
+            <ul>
+                <li>$target_dir = "uploads/" - specifies the directory where the file is going to be placed</li>
+                <li>$target_file specifies the path of the file to be uploaded</li>
+                <li>$uploadOk = 1 is not used yet (will be used later)</li>
+                <li>$imageFileType holds the file extension of the file (in lower case)</li>
+                <li>Next, check if the image file is an actual image or a fake image</li>
+            </ul>
+
+            <br>
+
+            <p class="edit1">
+                <strong>Note: </strong>You will need to create a new directory called "uploads" in the directory where "31. PHP File Upload-upload.php" file resides. The uploaded files will be saved there. 
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>
+            Check if File Already Exists 
+        </h2>
+
+        <div>
+            Now we can add some restrictions. 
+            <br>
+            First, we will check if the file already exists in the "uploads" folder. If it does, an error message is displayed, and $uploadOk is set to 0. 
+            <br>
+            <p style="border:0.1rem solid grey;padding:2rem;">
+                // Check if file already exists 
+                <br>
+                if (file_exists($target_file)) {
+                    <br>
+                    echo "Sorry, file already exists."; 
+                    <br>
+                    $uploadOk = 0; 
+                    <br>
+                }
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>
+            Limit File Size 
+        </h2>
+
+        <div>
+            The file input field in our HTML form above is named "fileToUpload". 
+            <br>
+            Now, we want to check the size of the file. If the file is larger than 500KB, an error message is displayed, and $uploadOk is set to 0. 
+            <br>
+            <p style="border:0.1rem solid grey;padding:2rem;">
+             // Check file size 
+             <br>
+             if ($_FILES["fileToUpload"]["size"] &gt; 500000) {
+                <br>
+                echo "Sorry, your file is too large."; 
+                <br>
+                $uploadOk = 0; 
+                <br>
+             }
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>
+            Limit File Type 
+        </h2>
+
+        <div>
+            The code below only allows users to upload JPG, JPEG, PNG, and GIF files. All other file types gives an error message before setting $uploadOk to 0. 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             // Allow certain file formats
+             <br>
+             if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
+                <br>
+                echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed."; 
+                <br>
+                $uploadOk = 0; 
+                <br>
+             } 
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>
+            Complete Upload File PHP Script 
+        </h2>
+
+        <div>
+            The complete "31. PHP File Upload-upload.php" file now looks like this. 
+            <br>
+            <a href="31. PHP File Upload-upload.php" target="_blank">31. PHP File Upload-upload.php</a>
+        </div>
+    </body>
+</html>
