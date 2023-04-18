@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Cookies 
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Cookies 
+        </h1>
+
+        <hr>
+
+        <h2>
+            What is a Cookie? 
+        </h2>
+
+        <div>
+            A cookie is often used to identify a user. A cookie is a small file that the server embeds on the user's computer. Each time the same computer requests a page with a browser, it will send the cookie too. With PHP, you can both create and retrieve cookie values. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Create Cookies With PHP 
+        </h2>
+
+        <div>
+            A cookie is created with the <span class="edit">setcookie()</span> function. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             setcookie(<i>name, value, expire, path, domain, secure, httponly</i>); 
+            </p>
+
+            <br>
+            Only the <i>name</i> parameter is required. All other parameters are optional. 
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP Create/Retrieve a Cookie 
+        </h2>
+
+        <div>
+            The following example creates a cookie named "user" with the value "John Doe". The cookie will expire after 30 days (86400 * 30). The "/" means that the cookie is available in entire website (otherwise, select the directory you prefer). 
+            <br>
+            We then retrieve the value of the cookie "user" (using the global variable $_COOKIE). We also use the <span class="edit">isset()</span> function to find out if the cookie is set. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="32. PHP Cookies-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+
+            <p class="edit1">
+                <strong>Note: </strong>The <span class="edit">setcookie()</span> function must appear BEFORE the &lt;html&gt; tag. 
+            </p>
+
+            <br>
+
+            <strong>Note: </strong>The value of the cookie is automatically URLencoded when sending the cookie, and automatically decoded when received (to prevent URLencoding, use <span class="edit">setrawcookie()</span> instead). 
+        </div>
+
+        <hr>
+        <br>
+        <hr>
+
+        <h2>
+            Modify a Cookie Value 
+        </h2>
+
+        <div>
+            To modify a cookie, just set (again) the cookie using the <span class="edit">setcookie()</span> function. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="32. PHP Cookies-Example 2.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Delete a Cookie 
+        </h2>
+
+        <div>
+            To delete a cookie, use the <span class="edit">setcookie()</span> function with an expiration date in the past. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="32. PHP Cookies-Example 3.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Check if Cookies are Enabled 
+        </h2>
+
+        <div>
+            The following example creates a small script that checks whether cookies are enabled. First, try to create a test cookie with the <span class="edit">setcookie()</span> function, then count the $_COOKIE array variable. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="32. PHP Cookies-Example 4.php" height="100" width="100%"></iframe>
+        </div>
+    </body>
+</html>

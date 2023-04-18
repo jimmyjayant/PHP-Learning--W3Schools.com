@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Sessions 
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Sessions 
+        </h1>
+
+        <hr>
+
+        <div>
+            A session is a way to store information (in variables) to be used across multiple pages. 
+            <br>
+            Unlike a cookie, the information is not stored on the users computer. 
+        </div>
+
+        <hr>
+
+        <h2>
+            What is a PHP Session? 
+        </h2>
+
+        <div>
+            When you work with an application, you open it, do some changes, and then you close it. This is much like a Session. The computer knows who you are. It knows when you start the application and when you end. But on the internet there is one problem: the web server does not know who you are or what you do, because the HTTP address doesn't maintain state. 
+            <br>
+            <br>
+            Session variables solve this problem by storing user information to be used across multiple pages (e.g. username, favorite color, etc.). By default, session variables last until the user closes the browser. 
+            <br>
+            <br>
+            So; Session variables hold information about one single user, and are available to all pages in one application. 
+            <br>
+            <p class="edit1">
+                <strong>Tip: </strong>If you need a permanent storage, you may want to store the data in a database. 
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>
+            Start a PHP Session 
+        </h2>
+        
+        <div>
+            A session is started with the <span class="edit">session_start()</span> function. 
+            <br>
+            Session variables are set with the PHP global variable: $_SESSION. 
+            <br>
+            Now, let's create a new page called "33. PHP Sessions-Example 1.php". In this page,we start a new PHP session and set some session variables. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="33. PHP Sessions-Example 1.php" height="50" width="100%"></iframe>
+
+            <br>
+            
+            <p class="edit1">
+                <strong>Note: </strong>The <span class="edit">session_start()</span> function must be the very thing in your document. Before any HTML tags. 
+            </p>
+        </div>
+
+        <hr>
+        <br>
+        <hr>
+
+        <h2>
+            Get PHP Session Variable Values 
+        </h2>
+
+        <div>
+            Next, we create another page called "33. PHP Sessions-Example 2.php". From this page, we will access the session information we set on the first page ("33. PHP Sessions-Example 1.php"). 
+            <br>
+            Notice that session variables are not passed individually to each new page, instead they are retrieved from the session we open at the beginning of each page (<span class="edit">session_start()</span>). 
+            <br>
+            Also notice that all session variable values are stored in the global $_SESSION variable. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="33. PHP Sessions-Example 2.php" height="60" width="100%"></iframe>
+
+            <br>
+            <br>
+            Another way to show all the session variable values for a user session is to run the following code. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="33. PHP Sessions-Example 3.php" height="50" width="100%"></iframe>
+
+            <br>
+
+            <div class="edit1">
+                <strong>
+                    How does it work? How does it know it's me? 
+                </strong>
+                <p>
+                    Most sessions set a user-key on the user's computer that looks something like this: 765487cf34ert8dede5a562e4f3a7e12. Then, when a session is opened on another page, it scans the computer for a user-key. If there is a match, it accesses that session, if not, it starts a new session. 
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>
+            Modify a PHP Session Variable 
+        </h2>
+
+        <div>
+            To change a session variable, just overwrite it. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="33. PHP Sessions-Example 4.php" height="60" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Destroy a PHP Session 
+        </h2>
+
+        <div>
+            To remove all global session variables and destroy the session, use <span class="edit">session_unset()</span> and <span class="edit">session_destroy()</span>. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="33. PHP Sessions-Example 5.php" height="100" width="100%"></iframe>
+        </div>
+    </body>
+</html>

@@ -1,7 +1,14 @@
 <?php
+// target directory in which uploaded files would be saved
 $target_dir = "uploads/";
+
+// full path of the uploaded file with name
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+
+// a variable, default value 1 suggest 'everything is OK' and 0 suggest 'error'
 $uploadOk = 1;
+
+// extension of the image file in lower case
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 // Check if image file is a actual image or fake image
