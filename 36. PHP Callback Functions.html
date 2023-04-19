@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Callback Functions  
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Callback Functions 
+        </h1>
+
+        <hr>
+
+        <h2>
+            Callback Functions 
+        </h2>
+
+        <div>
+            A callback function (often referred to as just "callback") is a function which is passed as an argument into another function. 
+            <br>
+            Any existing function can be used as a callback function. To use a function as a callback function, pass a string containing the name of the function as the argument of another function. 
+            <br>
+            Example:- 
+            <br>
+            <b><u>Pass a callback to PHP's <span class="edit">array_map()</span> function to calculate the length of every string in an array:- </u></b>
+            <br>
+            <iframe src="36. PHP Callback Functions-array_map() function.php" height="50" width="100%"></iframe>
+
+            <br>
+            <br>
+            Starting with version 7, PHP can pass anonymous functions as callback functions. 
+            <br>
+            Example:- 
+            <br>
+            <b><u>Use an anonymous function as a callback for PHP's <span class="edit">array_map()</span> function:- </u></b>
+            <br>
+            <iframe src="36. PHP Callback Functions-array_map() with anonymous function.php" height="50" width="100%"></iframe>
+        </div>
+
+        <hr>
+        <br>
+        <hr>
+
+        <h2>
+            Callbacks in User Defined Functions 
+        </h2>
+
+        <div>
+            User-defined functions and methods can also take callback functions as arguments. To use callback functions inside a user-defined function or method, call it by adding parentheses to the variable and pass arguments as with normal functions. 
+            <br>
+            Example:- 
+            <br>
+            <b><u>Run a callback from a user-defined function:- </u></b>
+            <br>
+            <iframe src="36. PHP Callback Functions-user defined function.php" height="100" width="100%"></iframe>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Filters Advanced 
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Filters Advanced 
+        </h1>
+
+        <hr>
+
+        <h2>
+            Validate an Integer Within a Range 
+        </h2>
+
+        <div>
+            The following example uses the <span class="edit">filter_var()</span> function to check if a variable is both of type INT, and between 1 and 200. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="35. PHP Filters Advanced-Validate Integer within range.php" height="50" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Validate IPv6 Address 
+        </h2>
+
+        <div>
+            The following example uses the <span class="edit">filter_var()</span> function to check if the variable $ip is a valid IPv6 address. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="35. PHP Filters Advanced-Validate IPV6 Address.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            Validate URL - Must Contain QueryString 
+        </h2>
+
+        <div>
+            The following example uses the <span class="edit">filter_var()</span> function to check if the variable $url is a URL with a querystring. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="35. PHP Filters Advanced-Validate URL with querystring.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Remove Characters With ASCII Value &gt; 127  
+        </h2>
+
+        <div>
+            The following example uses the <span class="edit">filter_var()</span> function to sanitize a string. It will both remove all HTML tags, and all characters with ASCII value &gt; 127, from the string. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="35. PHP Filters Advanced-Remove ASCII above 127.php" height="200" width="100%"></iframe>
+        </div>
+    </body>
+</html>
