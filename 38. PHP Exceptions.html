@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Exceptions  
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+
+            .table1 {
+                width:100%;
+                border:0.1rem solid #ddd;
+                border-collapse:collapse;
+            }
+
+            .table1 tr {
+                height:3rem;
+            }
+
+            .table1 tr:nth-child(even) {
+                background-color:#f1f1f1;
+            }
+
+            .table1 th {
+                text-align:left;
+                padding:0.5rem;
+            }
+
+            .table1 td {
+                padding:0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Exceptions  
+        </h1>
+
+        <hr>
+
+        <h2>
+            What is an Exception? 
+        </h2>
+
+        <div>
+            An exception is an object that describes an error or unexpected behaviour of a PHP script. 
+            <br>
+            Exceptions are thrown by many PHP functions and classes. 
+            <br>
+            User defined functions and classes can also throw exceptions. 
+            <br>
+            Exceptions are a good way to stop a function when it comes across data that it cannot use. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Throwing an Exception 
+        </h2>
+
+        <div>
+            The <span class="edit">throw</span> statement allows a user defined function or method to throw an exception. When an exception is thrown, the code following it will not be executed. 
+            <br>
+            If an exception is not caught, a fatal error will occur with an "Uncaught Exception" message. 
+            <br>
+            Lets try to throw an exception without calling it. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="38. PHP Exceptions-Throwing Exception 1.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            The try...catch Statement 
+        </h2>
+
+        <div>
+            To avoid the error from the example above, we can use the <span class="edit">try...catch</span> statement to catch exceptions and continue the process. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem">
+              <span style="color:blue;">try</span> {
+               <br>
+               &nbsp;&nbsp;code that can <span style="color:blue;">throw</span> exceptions 
+               <br>
+              }
+              <br>
+              <span style="color:blue;">catch</span>(Exception $e) {
+                <br>
+                &nbsp;&nbsp;code that runs when an exception is caught 
+                <br>
+              }
+            </p>
+
+            <br>
+            <br>
+            Example:- 
+            <br>
+            Show a message when an exception is thrown. 
+            <br>
+            <iframe src="38. PHP Exceptions-try and catch 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            The catch block indicates what type of exception should be caught and the name of the variable which can be used to access the exception. In the example above, the type of exception is <span class="edit">Exception</span> and the variable name is <span class="edit">$e</span>. 
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            The try...catch...finally Statement 
+        </h2>
+
+        <div>
+            The <span class="edit">try...catch...finally</span> statement can be used to catch exceptions. Code in the <span class="edit">finally</span> block will always run regardless of whether an exception was caught. If <span class="edit">finally</span> is present, the <span class="edit">catch</span> block is optional. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             try {
+                <br>
+                code that can throw exceptions 
+                <br>
+             }
+             <br>
+             catch(Exception $e) {
+                <br>
+                code that runs when an exception is caught 
+                <br>
+             }
+             <br>
+             finally {
+                <br>
+                code that always runs regardless of whether an exception was caught 
+                <br>
+             }
+            </p>
+
+            <br>
+            Example:- 
+            <br>
+            Show a message when an exception is thrown and then indicate that the process has ended. 
+            <br>
+            <iframe src="38. PHP Exceptions-try catch and finally.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            Example:- 
+            <br>
+            Output a string even if an exception was not caught. 
+            <br>
+            <iframe src="38. PHP Exceptions-try catch and finally 1.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            The Exception Object 
+        </h2>
+
+        <div>
+            The Exception Object contains information about the error or unexpected behaviour that the function encountered. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             new Exception(message, code, previous) 
+            </p>
+
+            <br>
+            
+            <b>Parameter Values</b>
+
+            <br>
+            <br>
+            <table class="table1">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>message</td>
+                    <td>Optional. A string describing why the exception was thrown</td>
+                </tr>
+                <tr>
+                    <td>code</td>
+                    <td>Optional. An integer that can be used to easily distinguish this exception from others of the same type</td>
+                </tr>
+                <tr>
+                    <td>previous</td>
+                    <td>Optional. If this exception was thrown in a catch block of another exception, it is recommended to pass that exception into this parameter.</td>
+                </tr>
+            </table>
+
+            <br>
+            <br>
+
+            <b>Methods</b>
+            <br>
+            When catching an exception, the following table shows some of the methods that can be used to get information about the exception. 
+            <br>
+            <br>
+            <table class="table1">
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>getMessage()</td>
+                    <td>Returns a string describing why the exception was thrown</td>
+                </tr>
+                <tr>
+                    <td>getPrevious()</td>
+                    <td>If this exception was triggered by another one, this method returns the previous exception. If not, then it returns <i>null</i></td>
+                </tr>
+                <tr>
+                    <td>getCode()</td>
+                    <td>Returns the exception code</td>
+                </tr>
+                <tr>
+                    <td>getFile()</td>
+                    <td>Returns the full path of the file in which the exception was thrown</td>
+                </tr>
+                <tr>
+                    <td>getLine()</td>
+                    <td>Returns the line number of the line of code which threw the exception</td>
+                </tr>
+            </table>
+
+            <br>
+            <br>
+            Example:- 
+            <br>
+            Output information about an exception that was thrown. 
+            <br>
+            <iframe src="38. PHP Exceptions-Throwing Exception Information.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Complete Exception Reference 
+        </h2>
+
+        <div>
+            For a complete reference, go to our <a href="https://www.w3schools.com/php/php_ref_exception.asp" target="_blank">Complete PHP Exception Reference</a>. 
+            <br>
+            The reference contains descriptions and examples of all Exception methods. 
+        </div>
+    </body>
+</html>

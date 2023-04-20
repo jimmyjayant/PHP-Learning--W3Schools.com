@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP and JSON 
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP and JSON 
+        </h1>
+
+        <hr>
+
+        <h2>
+            What is JSON? 
+        </h2>
+
+        <div>
+            JSON stands for JavaScript Object Notation, and is a syntax for storing and exchanging data. 
+            <br>
+            Since the JSON format is a text-based format, it can easily be sent to and from a server, and used as a data format by any programming language. 
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP and JSON 
+        </h2>
+
+        <div>
+            PHP has some built-in functions to handle JSON. 
+            <br>
+            First, we will look at the following two functions: 
+            <br>
+            <ul>
+                <li><span class="edit">json_encode()</span></li>
+                <li><span class="edit">json_decode()</span></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP - json_encode() 
+        </h2>
+
+        <div>
+            The <span class="edit">json_encode()</span> function is used to encode a value to JSON format. 
+            <br>
+            Example:- 
+            <br>
+            This example shows how to encode an associative array into a JSON object. 
+            <br>
+            <iframe src="37. PHP JSON-json encode().php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            Example:- 
+            <br>
+            This example shows how to encode an indexed array into a JSON array. 
+            <br>
+            <iframe src="37. PHP JSON-json encode() 1.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+        <br>
+        <hr>
+
+        <h2>
+            PHP - json_decode() 
+        </h2>
+
+        <div>
+            The <span class="edit">json_decode()</span> function is used to decode a JSON object into a PHP object or an associative array. 
+            <br>
+            Example:- 
+            <br>
+            This example decodes JSON data into a PHP object. 
+            <br>
+            <iframe src="37. PHP JSON-json decode().php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            
+            The <span class="edit">json_decode()</span> function returns an object by default. The <span class="edit">json_decode()</span> function has a second parameter, and when set to true, JSON objects are decoded into associative arrays. 
+            <br>
+            Example:- 
+            <br>
+            This example decodes JSON data into a PHP associative array. 
+            <br>
+            <iframe src="37. PHP JSON-json decode() 1.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP - Accessing the Decoded Values 
+        </h2>
+
+        <div>
+            Here are two examples of how to access the decoded values from an object and from an associative array. 
+            <br>
+            Example:- 
+            <br>
+            This example shows how to access the values from a PHP object. 
+            <br>
+            <iframe src="37. PHP JSON-Accessing Decoded Values.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+
+            Example:- 
+            <br>
+            This example shows how to access the values from a PHP associative array. 
+            <br>
+            <iframe src="37. PHP JSON-Accessing Decoded Values 1.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP - Looping Through the Values 
+        </h2>
+
+        <div>
+            You can also loop through the values with a <span class="edit">foreach()</span> loop. 
+            <br>
+            Example:- 
+            <br>
+            This example shows how to loop through the values of a PHP object. 
+            <br>
+            <iframe src="37. PHP JSON-Looping Through Values.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            Example:- 
+            <br>
+            This example shows how to loop through the values of a PHP associative array. 
+            <br>
+            <iframe src="37. PHP JSON-Looping Through Values 1.php" height="100" width="100%"></iframe>
+        </div>
+    </body>
+</html>
