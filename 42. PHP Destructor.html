@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Destructor 
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP OOP - Destructor    
+        </h1>
+
+        <hr>
+
+        <h2>
+            PHP - The __destruct Function 
+        </h2>
+
+        <div>
+            A destructor is called when the object is destructed or the script is stopped or exited. 
+            <br>
+            If you create a <span class="edit">__destruct()</span> function, PHP will automatically call this function at the end of the script. 
+            <br>
+            Notice that the destruct function starts with two underscores (__)! 
+            <br>
+            The example below has a __construct() function that is automatically called when you create an object from a class, and a __destruct() function that is automatically called at the end of the script. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="42. PHP Destructor-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            Another example: 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="42. PHP Destructor-Example 2.php" height="100" width="100%"></iframe>
+
+            <br>
+
+            <p class="edit1">
+                <strong>Tip: </strong>As constructors and destructors helps reducing the amount of code, they are very useful! 
+            </p>
+        </div>
+    </body>
+</html>
