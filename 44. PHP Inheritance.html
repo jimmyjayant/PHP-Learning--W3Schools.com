@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Inheritance   
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP OOP - Inheritance      
+        </h1>
+
+        <hr>
+
+        <h2>
+            PHP - What is Inheritance? 
+        </h2>
+
+        <div>
+            Inheritance in OOP = When a class derives from another class. 
+            <br>
+            The child class will inherit all the public and protected properties and methods from the parent class. In addition, it can have its own properties and methods. 
+            <br>
+            An inherited class is defined by using the <span class="edit">extends</span> keyword. 
+            <br>
+            Let's look at an example. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="44. PHP Inheritance-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            <b>Example Explained</b>
+            <br>
+            The Strawberry class is inherited from the Fruit class. 
+            <br>
+            This means that the Strawberry class can use the public $name and $color properties as well as the public __construct() and intro() methods from the Fruit class because of inheritance. 
+            <br>
+            The Strawberry class also has its own method: message(). 
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            PHP - Inheritance and the Protected Access Modifier 
+        </h2>
+
+        <div>
+            In the previous chapter we learned that <span class="edit">protected</span> properties or methods can be accessed within the class and by classes derived from that class. What does that mean? 
+            <br>
+            Let's look at an example. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="44. PHP Inheritance-Example 2.php" height="100" width="100%"></iframe>
+
+            <br>
+            In the example above we see that if we try to call a <span class="edit">protected</span> method (intro()) from outside the class, we will receive an error. <span class="edit">public</span> methods will work fine! 
+            <br>
+            Let's look at another example. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="44. PHP Inheritance-Example 3.php" height="100" width="100%"></iframe>
+
+            <br>
+            In the example above we see that all works fine! It is because we call the <span class="edit">protected</span> method (intro()) from inside the derived class. 
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP - Overriding Inherited Methods 
+        </h2>
+
+        <div>
+            Inherited methods can be overridden by redefining the methods (use the same name) in the child class. 
+            <br>
+            Look at the example below. The __construct() and intro() methods in the child class (Strawberry) will override the __construct() and intro() methods in the parent class (Fruit). 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="44. PHP Inheritance-Example 4.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP - The final Keyword 
+        </h2>
+
+        <div>
+            The <span class="edit">final</span> keyword can be used to prevent class inheritance or to prevent method overriding. 
+            <br>
+            The following example shows how to prevent class inheritance. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="44. PHP Inheritance-Example 5.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            The following example shows how to prevent method overriding. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="44. PHP Inheritance-Example 6.php" height="100" width="100%"></iframe>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Abstract Classes     
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP OOP - Abstract Classes        
+        </h1>
+
+        <hr>
+
+        <h2>
+            PHP - What are Abstract Classes and Methods? 
+        </h2>
+
+        <div>
+            Abstract classes and methods are when the parent class has a named method, but need its child class(es) to fill out the tasks. 
+            <br>
+            An abstract class is a class that contains at least one abstract method. An abstract method is a method that is declared, but not implemented in the code. 
+            <br>
+            An abstract class or method is defined with the <span class="edit">abstract</span> keyword. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?php
+             <br>
+             abstract class ParentClass {
+                <br>
+                abstract public function someMethod1();
+                <br>
+                abstract public function someMethod2($name, $color); 
+                <br>
+                abstract public function someMethod3() : string; 
+                <br>
+             }
+             <br>
+             ?&gt; 
+            </p>
+
+            <br>
+            When inheriting from an abstract class, the child class method must be defined with the same name, and the same or a less restricted access modifier. So, if the abstract method is defined as protected, the child class method must be defined as either protected or public, but not private. Also, the type and number of required arguments must be the same. However, the child classes may have optional arguments in addition. 
+            <br>
+            <br>
+            So, when a child class is inherited from an abstract class, we have the following rules: 
+            <br>
+            <ul>
+                <li>The child class method must be defined with the same name and it redeclares the parent abstract method</li>
+                <li>The child class method must be defined with the same or a less restricted access modifier</li>
+                <li>The number of required arguments must be the same. However, the child class may have optional arguments in addition</li>
+            </ul>
+
+            <br>
+            Let's look at an example. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="46. PHP Abstract Classes-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            
+            <b>Example Explained</b>
+            <br>
+            The Audi, Volvo, and Citroen classes are inherited from the Car class. This means that the Audi, Volvo, and Citroen classes can use the public $name property as well as the public __construct() method from the Car class because of inheritance. 
+            <br>
+            But, intro() is an abstract method that should be defined in all the child classes and they should return a string. 
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            PHP - More Abstract Class Examples 
+        </h2>
+
+        <div>
+            Let's look at another example where the abstract method has an argument. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="46. PHP Abstract Classes-Example 2.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            Let's look at another example where the abstract method has an argument, and the child class has two optional arguments that are not defined in the parent's abstract method. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="46. PHP Abstract Classes-Example 3.php" height="100" width="100%"></iframe>
+        </div>
+    </body>
+</html>
