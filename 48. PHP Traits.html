@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Traits       
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP OOP - Traits          
+        </h1>
+
+        <hr>
+
+        <h2>
+            PHP - What are Traits? 
+        </h2>
+
+        <div>
+            PHP only supports single inheritance: a child class can inherit only from one single parent. 
+            <br>
+            So, what if a class needs to inherti multiple behaviors? OOP traits solve this problem. 
+            <br>
+            Traits are used to declare methods that can be used in multiple classes. Traits can have methods and abstract methods that can be used in multiple classes, and the methods can have any access modifier (public, private, or protected). 
+            <br>
+            Traits are declared with the <span class="edit">trait</span> keyword. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?php
+             <br>
+             trait TraitName {
+                <br>
+                <span style="color:green;">// some code </span>
+                <br>
+             }
+             <br>
+             ?&gt; 
+            </p>
+
+            <br>
+            To use a trait in a class, use the <span class="edit">use</span> keyword. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?php
+             <br>
+             class MyClass {
+                <br>
+                use TraitName;
+                <br>
+             }
+             <br>
+             ?&gt; 
+            </p>
+
+            <br>
+            Let's look at an example. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="48. PHP Traits-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            <b>Example Explained</b>
+            <br>
+            Here, we declare one trait: message1. Then, we create a class: Welcome. The class uses the trait, and all the methods in the trait will be available in the class. 
+            <br>
+            If other classes need to use the msg1() function, simply use the message1 trait in those classes. This reduces code duplication, because there is no need to redeclare the same method over and over again. 
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            PHP - Using Multiple Traits 
+        </h2>
+
+        <div>
+            Let's look at another example. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="48. PHP Traits-Example 2.php" height="100" width="100%"></iframe>
+
+            <br>
+            <b>Example Explained</b>
+            <br>
+            Here, we declare two traits: message1 and message2. Then, we create two classes: Welcome and Welcome2. The first class (Welcome) uses the message1 trait, and the second class (Welcome2) uses both message1 and message2 traits (multiple traits are separated by comma). 
+        </div>
+    </body>
+</html>

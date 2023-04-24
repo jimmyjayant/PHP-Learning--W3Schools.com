@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Static Methods        
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP OOP - Static Methods           
+        </h1>
+
+        <hr>
+
+        <h2>
+            PHP - Static Methods 
+        </h2>
+
+        <div>
+            Static methods can be called directly - without creating an instance of the class first. 
+            <br>
+            Static methods are declared with the <span class="edit">static</span> keyword. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?php
+             <br>
+             class <i>ClassName</i> {
+                <br>
+                public static function <i>staticMethod</i>() {
+                    <br>
+                    echo "Hello World!";
+                    <br>
+                }
+                <br>
+             }
+             <br>
+             ?&gt; 
+            </p>
+
+            <br>
+            To access a static method use the class name, double colon (::), and the method name. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             <i>ClassName</i>::<i>staticMethod()</i>; 
+            </p>
+
+            <br>
+            Let's look at an example. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="49. PHP Static Methods-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            <b>Example Explained</b>
+            <br>
+            Here, we declare a static method: welcome(). Then, we call the static method by using the class name, double colon (::), and the method name (without creating an instance of the class first). 
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            PHP - More on Static Methods 
+        </h2>
+
+        <div>
+            A class can have both static and non-static methods. A static method can be accessed from a method in the same class using the <span class="edit">self</span> keyword and double colon (::). 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="49. PHP Static Methods-Example 2.php" height="100" width="100%"></iframe>
+
+            <br>
+            Static methods can also be called from methods in other classes. To do this, the static method should be <span class="edit">public</span>. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="49. PHP Static Methods-Example 3.php" height="100" width="100%"></iframe>
+
+            <br>
+            To call a static method from a child class, use the <span class="edit">parent</span> keyword inside the child class. Here, the static method can be <span class="edit">public</span> or <span class="edit">protected</span>. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="49. PHP Static Methods-Example 4.php" height="100" width="100%"></iframe>
+        </div>
+    </body>
+</html>
