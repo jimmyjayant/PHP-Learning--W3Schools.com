@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Static Properties         
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP OOP - Static Properties            
+        </h1>
+
+        <hr>
+
+        <h2>
+            PHP - Static Properties 
+        </h2>
+
+        <div>
+            Static properties can be called directly - without creating an instance of a class. 
+            <br>
+            Static properties are declared with the <span class="edit">static</span> keyword. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?php
+             <br>
+             class ClassName {
+                <br>
+                public static $staticProp = "W3Schools";
+                <br>
+             }
+             <br>
+             ?&gt; 
+            </p>
+
+            <br>
+            <br>
+            To access a static property use the class name, double colon (::), and the property name. 
+            <br>
+            <b>Syntax</b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             ClassName::$staticProp; 
+            </p>
+
+            <br>
+            Let's look at an example. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="50. PHP Static Properties-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            <b>Example Explained</b>
+            <br>
+            Here, we declare a static property: $value. Then, we echo the value of the static property by using the class name, double colon (::), and the property name (without creating a class first). 
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            PHP - More on Static Properties 
+        </h2>
+
+        <div>
+            A class can have both static and non-static properties. A static property can be accessed from a method in the same class using the <span class="edit">self</span> keyword and double colon (::). 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="50. PHP Static Properties-Example 2.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+
+            To call a static property from a child class, use the <span class="edit">parent</span> keyword inside the child class. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="50. PHP Static Properties-Example 3.php" height="100" width="100%"></iframe>
+        </div>
+    </body>
+</html>

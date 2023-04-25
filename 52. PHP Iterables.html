@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP Iterables           
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Iterables              
+        </h1>
+
+        <hr>
+
+        <h2>
+            PHP - What is an Iterable? 
+        </h2>
+
+        <div>
+            An iterable is any value which can be looped through with a <span class="edit">foreach()</span> loop. 
+            <br>
+            The <span class="edit">iterable</span> pseudo-type was introduced in PHP 7.1, and it can be used as a data type for function arguments and function return values. 
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP - Using Iterables 
+        </h2>
+
+        <div>
+            The <span class="edit">iterable</span> keyword can be used as a data type of a function argument or as the return type of a function. 
+            <br>
+            Example:- 
+            <br>
+            <b>Use an iterable function argument:- </b>
+            <br>
+            <iframe src="52. PHP Iterables-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            Example:- 
+            <br>
+            <b>Return an iterable:- </b>
+            <br>
+            <iframe src="52. PHP Iterables-Example 2.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            PHP - Creating Iterables 
+        </h2>
+
+        <div>
+            <b>Arrays</b>
+            <br>
+            All arrays are iterables, so any array can be used as an argument of a function that requires an iterable. 
+            <br>
+            <br>
+            <b>Iterators</b>
+            <br>
+            Any object that implements the <span class="edit">Iterator</span> interface can be used as an argument of a function that requires an iterable. 
+            <br>
+            An iterator contains a list of items and provides methods to loop through them. It keeps a pointer to one of the elements in the list. Each item in the list should have a key which can be used to find the item. 
+            <br>
+            An iterator must have these methods:- 
+            <br>
+            <ul>
+                <li><span class="edit">current()</span> - Returns the element that the pointer is currently pointing to. It can be any data type</li>
+                <li><span class="edit">key()</span> - Returns the key associated with the current element in the list. It can only be an integer, float, boolean or string</li>
+                <li><span class="edit">next()</span> - Moves the pointer to the next element in the list</li>
+                <li><span class="edit">rewind()</span> - Moves the pointer to the first element in the list</li>
+                <li><span class="edit">valid()</span> - If the internal pointer is not pointing to any element (for example, if next() was called at the end of the list), this should return false. It returns true in any other case.</li>
+            </ul>
+
+            <br>
+            Example:- 
+            <br>
+            <b>Implement the Iterator interface and use it as an iterable:- </b>
+            <br>
+            <iframe src="52. PHP Iterables-Example 3.php" height="100" width="100%"></iframe>
+        </div>
+    </body>
+</html>
