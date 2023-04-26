@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP MySQL Create DB             
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Create a MySQL Database                 
+        </h1>
+
+        <hr>
+
+        <div>
+            A database consists of one or more tables. 
+            <br>
+            You will need special CREATE privileges to create or to delete a MySQL database. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Create a MySQL Database Using MySQLi and PDO 
+        </h2>
+
+        <div>
+            The CREATE DATABASE statement is used to create a database in MySQL. 
+            <br>
+            The following examples create a database named "myDB". 
+            <br>
+            Example (MySQLi Object-Oriented):- 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?php
+             <br>
+             $servername = "localhost";
+             <br>
+             $username = "username";
+             <br>
+             $password = "password"; 
+             <br>
+             <br>
+             // Create connection 
+             <br>
+             $conn = new mysqli($servername, $username, $password); 
+             <br>
+             // Check connection 
+             <br>
+             if($conn->connect_error) {
+                <br>
+                die("Connection failed: " . $conn->connect_error); 
+                <br>
+             }
+             <br>
+             // Create database 
+             <br>
+             $sql = "CREATE DATABASE myDB"; 
+             <br>
+             if($conn->query($sql) === TRUE) {
+                <br>
+                echo "Database created successfully"; 
+                <br>
+             }
+             <br>
+             else {
+                <br>
+                echo "Error creating database: " . $conn->error; 
+                <br>
+             }
+             <br>
+             $conn->close(); 
+             <br>
+             ?&gt; 
+            </p>
+
+            <br>
+
+            <p class="edit1">
+                <strong>Note: </strong>When you create a new database, you must only specify the first three arguments to the mysqli object (servername, username, and password). 
+                <br>
+                <strong>Tip: </strong>If you have to use a specific port, add an empty string for the database-name argument, like this: new mysqli("localhost", "username", "password", "", port) 
+            </p>
+        </div>
+
+        <hr>
+        <br>
+        <hr>
+
+        <h2>
+            Example (MySQLi Procedural):- 
+        </h2>
+
+        <div>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+            &lt;?php
+            <br>
+            $servername = "localhost"; 
+            <br>
+            $username = "username"; 
+            <br>
+            $password = "password"; 
+            <br>
+            // Create connection 
+            <br>
+            $conn = new mysqli($servername, $username, $password); 
+            <br>
+            // Check connection 
+            <br>
+            if(!$conn) {
+                <br>
+                die("Connection failed: " . mysqli_connect_error()); 
+                <br>
+            }
+            <br>
+            // Create database
+            <br>
+            $sql = "CREATE DATABASE myDB"; 
+            <br>
+            if(mysqli_query($conn, $sql)) {
+                <br>
+                echo "Database created successfully"; 
+                <br>
+            }
+            <br>
+            else {
+              <br>
+              echo "Error creating database: " . mysqli_error($conn); 
+              <br>
+            }
+            <br>
+            mysqli_close($conn); 
+            <br>
+            ?&gt; 
+            </p>
+
+            <br>
+            <br>
+            <strong>Note: </strong>The following PDO example created a database named "myDBPDO". 
+            <br>
+            <br>
+
+            <h2>
+                Example (PDO):- 
+            </h2>
+
+            <div>
+                <p style="border:0.1rem solid grey; padding:2rem;">
+                 &lt;?php
+                 <br>
+                 $servername = "localhost"; 
+                 <br>
+                 $username = "username"; 
+                 <br>
+                 $password = "password"; 
+                 <br>
+                 try {
+                    <br>
+                    $conn = new PDO("mysql:host=$servername", $username, $password); 
+                    <br>
+                    // set the PDO error mode to exception 
+                    <br>
+                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERROMODE_EXCEPTION); 
+                    <br>
+                    $sql = "CREATE DATABASE myDBPDO"; 
+                    <br>
+                    // use exec() because no results are returned 
+                    <br>
+                    $conn->exec($sql); 
+                    <br>
+                    echo "Database created successfully<br>"; 
+                    <br> 
+                 }
+                 <br>
+                 catch (PDOException $e) {
+                    <br>
+                    echo $sql . "<br>" . $e->getMessage(); 
+                    <br>
+                 }
+                 <br>
+                 $conn = null; 
+                 <br>
+                 ?&gt; 
+                </p>
+
+                <br>
+                <br>
+
+                <strong>Tip: </strong>A great benefit of PDO is that it has exception class to handle any problems that may occur in our database queries. If an exception is thrown within the try { } block, the script stops executing and flows directly to the first catch(){ } block. In the catch block above we echo the SQL statement and the generated error message. 
+            </div>
+        </div>
+    </body>
+</html>

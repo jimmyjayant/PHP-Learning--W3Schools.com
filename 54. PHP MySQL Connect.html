@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP MySQL Connect            
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Connect to MySQL                
+        </h1>
+
+        <hr>
+
+        <div>
+            PHP 5 and later can work with a MySQL database using: 
+            <br>
+            <ul>
+                <li><strong>MySQLi extension</strong> (the "i" stands for improved)</li>
+                <li><strong>PDO (PHP Data Objects)</strong></li>
+            </ul>
+
+            <br>
+            Earlier versions of PHP used the MySQL extension. However, this extension was deprecated in 2012. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Should I Use MySQLi or PDO? 
+        </h2>
+
+        <div>
+            If you need a short answer, it would be "Whatever you like". 
+            <br>
+            Both MySQLi and PDO have their advantages: 
+            <br>
+            PDO will work on 12 different database systems, whereas MySQLi will only work with MySQL databases. 
+            <br>
+            So, if you have to switch your project to use another database, PDO makes the process easy. You only have to change the connection string and a few queries. With MySQLi, you will need to rewrite the entire code - queries included. 
+            <br>
+            Both are object-oriented, but MySQLi also offers a procedural API. 
+            <br>
+            Both support Prepared Statements. Prepared Statements protect from SQL injection, and are very important for web application security. 
+        </div>
+
+        <hr>
+
+        <h2>
+            MySQL Examples in Both MySQLi and PDO Syntax 
+        </h2>
+
+        <div>
+            In this, and in the following chapters we demonstrate three ways of working with PHP and MySQL: 
+            <br>
+            <ul>
+                <li>MySQLi (object-oriented)</li>
+                <li>MySQLi (procedural)</li>
+                <li>PDO</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>
+            MySQLi Installation 
+        </h2>
+
+        <div>
+            For Linux and Windows: The MySQLi extension is automatically installed in most cases, when php5 mysql package is installed. 
+            <br>
+            For installation details, go to: <a href="http://php.net/manual/en/mysqli.installation.php" target="_blank">http://php.net/manual/en/mysqli.installation.php</a>
+        </div>
+
+        <hr>
+
+        <h2>
+            PDO Installation 
+        </h2>
+
+        <div>
+            For installation details, go to: <a href="http://php.net/manual/en/pdo.installation.php" target="_blank">http://php.net/manual/en/pdo.installation.php</a>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            Open a Connection to MySQL 
+        </h2>
+
+        <div>
+            Before we can access data in the MySQL database, we need to be able to connect to the server. 
+            <br>
+            Example (MySQLi Object-Oriented):- 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?php
+             <br>
+             $servername = "localhost";
+             <br>
+             $username = "username";
+             <br>
+             $password = "password";
+             <br>
+             <br>
+             // Create connection
+             <br>
+             $conn = new mysqli($servername, $username, $password); 
+             <br>
+             // Check connection
+             <br>
+             if ($conn->connect_error) {
+                <br>
+                die("Connection failed: " . $conn->connect_error);
+                <br>
+             }
+             <br>
+             echo "Connected successfully"; 
+             <br>
+             ?&gt; 
+            </p>
+
+            <br>
+            <br>
+
+            <div class="edit1">
+                <strong>
+                    Note on the object-oriented example above: 
+                </strong>
+                <br>
+                <p>
+                    $connect_error was broken until PHP 5.2.9 and 5.3.0. If you need to ensure compatibility with PHP versions prior to 5.2.9 and 5.3.0, use the following code instead: 
+                    <br>
+                    // Check connection
+                    <br>
+                    if(mysqli_connect_error()) {
+                        <br>
+                        die("Database connection failed: " . mysqli_connect_error()); 
+                        <br>
+                    }
+                </p>
+            </div>
+
+            
+            <br>
+            <br>
+            Example (MySQLi Procedural):- 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?php
+             <br>
+             $servername = "localhost";
+             <br>
+             $username = "username";
+             <br>
+             $password = "password"; 
+             <br>
+             <br>
+             // Create Connection 
+             <br>
+             $conn = mysqli_connect($servername, $username, $password); 
+             <br>
+             // Check connection 
+             <br>
+             if (!$conn) {
+                <br>
+                die("Connection failed: " . mysqli_connect_error()); 
+                <br>
+             }
+             <br>
+             echo "Connected successfully"; 
+             <br>
+             ?&gt; 
+            </p> 
+
+            <br>
+            <br>
+            Example (PDO):- 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?php
+             <br>
+             $servername = "localhost";
+             <br>
+             $username = "username"; 
+             <br>
+             $password = "password"; 
+             <br>
+             <br>
+             try {
+                <br>
+                $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password); 
+                <br>
+                // set the PDO error mode to exception 
+                <br>
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+                <br>
+                echo "Connected successfully"; 
+                <br>
+             }
+             <br>
+             catch(PDOException $e) {
+                <br>
+                echo "Connection failed: " . $e->getMessage(); 
+                <br>
+             }
+             <br>
+             ?&gt; 
+            </p>
+
+            <br>
+
+            <p class="edit1">
+                <strong>Note: </strong>In the PDO example above we have also <strong>specified a database (myDB)</strong>. PDO require a valid database to connect to. If no database is specified, an exception is thrown. 
+            </p>
+
+            <br>
+
+            <strong>Tip: </strong>A great benefit of PDO is that it has an exception class to handle any problems that may occur in our database queries. If an exception is thrown within the try{ } block, the script stops executing and flows directly to the first catch() { } block. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Close the Connection 
+        </h2>
+
+        <div>
+            The connection will be closed automatically when the script ends. To close the connection before, use the following: 
+            <br>
+            <b>MySQLi Object-Oriented: </b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             $conn->close(); 
+            </p>
+
+            <br>
+            <br>
+
+            <b>MySQLi Procedural: </b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             mysqli_close($conn); 
+            </p>
+
+            <br>
+            <br>
+
+            <b>PDO: </b>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             $conn = null; 
+            </p>
+        </div>
+    </body>
+</html>
