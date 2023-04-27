@@ -98,6 +98,9 @@
             </p>
 
             <br>
+            <br>
+
+            <iframe src="55. PHP MySQL Create DB-Example 1.php" height="100" width="100%"></iframe>
 
             <p class="edit1">
                 <strong>Note: </strong>When you create a new database, you must only specify the first three arguments to the mysqli object (servername, username, and password). 
@@ -126,7 +129,7 @@
             <br>
             // Create connection 
             <br>
-            $conn = new mysqli($servername, $username, $password); 
+            $conn = mysqli_connect($servername, $username, $password); 
             <br>
             // Check connection 
             <br>
@@ -159,6 +162,12 @@
 
             <br>
             <br>
+
+            <iframe src="55. PHP MySQL Create DB-Example 2.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+
             <strong>Note: </strong>The following PDO example created a database named "myDBPDO". 
             <br>
             <br>
@@ -183,7 +192,7 @@
                     <br>
                     // set the PDO error mode to exception 
                     <br>
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERROMODE_EXCEPTION); 
+                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
                     <br>
                     $sql = "CREATE DATABASE myDBPDO"; 
                     <br>
@@ -191,7 +200,7 @@
                     <br>
                     $conn->exec($sql); 
                     <br>
-                    echo "Database created successfully<br>"; 
+                    echo "Database created successfully&lt;br&gt;"; 
                     <br> 
                  }
                  <br>
@@ -205,6 +214,11 @@
                  <br>
                  ?&gt; 
                 </p>
+
+                <br>
+                <br>
+
+                <iframe src="55. PHP MySQL Create DB-Example 3.php" height="100" width="100%"></iframe>
 
                 <br>
                 <br>

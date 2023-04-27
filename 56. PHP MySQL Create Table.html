@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP MySQL Create Table              
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP MySQL Create Table                 
+        </h1>
+
+        <hr>
+
+        <div>
+            A database table has its own unique name and consists of columns and rows. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Create a MySQL Table Using MySQLi and PDO 
+        </h2>
+
+        <div>
+            The CREATE TABLE statement is used to create a table in MySQL. 
+            <br>
+            We will create a table named "MyGuests", with five columns: "id", "firstname", "lastname", "email" and "reg_date". 
+            <br>
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             CREATE TABLE MyGuests ( 
+                <br>
+                id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+                <br>
+                firstname VARCHAR(30) NOT NULL,
+                <br>
+                lastname VARCHAR(30) NOT NULL, 
+                <br>
+                email VARCHAR(50), 
+                <br>
+                reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+                <br>
+             )
+            </p>
+
+            <br>
+
+            <strong>Notes on the table above: </strong>
+            <br>
+            The data type specifies what type of data the column can hold. For a complete reference of all the available data types, go to our <a href="https://www.w3schools.com/sql/sql_datatypes.asp" target="_blank">Data Types reference</a>. 
+            <br>
+            After the data type, you can specify other optional attributes for each column: 
+            <br>
+            <ul>
+                <li>NOT NULL - Each row must contain a value for that column, null values are not allowed</li>
+                <li>DEFAULT value - Set a default value that is added when no other value is passed</li>
+                <li>UNSIGNED - Used for number types, limits the stored data to positive numbers and zero</li>
+                <li>AUTO_INCREMENT - MySQL automatically increases the value of the field by 1 each time a new record is added</li>
+                <li>PRIMARY KEY - Used to uniquely identify the rows in a table. The column with PRIMARY KEY setting is often an ID number, and is often used with AUTO_INCREMENT</li>
+            </ul>
+
+            <br>
+
+            Each table should have a primary key column (in this case: the "id" column). Its value must be unique for each record in the table. 
+            <br>
+            The following examples shows how to create the table in PHP. 
+            <br>
+            Example:- 
+            <br>
+            <b>MySQLi Object-Oriented:- </b>
+            <br>
+            <br>
+            <iframe src="56. PHP MySQL Create Table-Example 1.php" height="200" width="100%"></iframe>
+        </div>
+
+        <hr>
+        <br>
+        <hr>
+
+        <h2>
+            Example (MySQLi Procedural):- 
+        </h2>
+
+        <div>
+            <iframe src="56. PHP MySQL Create Table-Example 2.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Example (PDO):- 
+        </h2>
+
+        <div>
+            <iframe src="56. PHP MySQL Create Table-Example 3.php" height="100" width="100%"></iframe>
+        </div>
+    </body>
+</html>
