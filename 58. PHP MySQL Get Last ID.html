@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP MySQL Get Last ID               
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP MySQL Get Last Inserted ID                   
+        </h1>
+
+        <hr>
+
+        <h2>
+            Get ID of The Last Inserted Record 
+        </h2>
+
+        <div>
+            If we perform an INSERT or UPDATE on a table with an AUTO_INCREMENT field, we can get the ID of the last inserted/updated record immediately. 
+            <br>
+            In the table "MyGuests", the "id" column is an AUTO_INCREMENT field. 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             CREATE TABLE MyGuests (
+                <br>
+                id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                <br>
+                firstname VARCHAR(30) NOT NULL, 
+                <br>
+                lastname VARCHAR(30) NOT NULL, 
+                <br>
+                email VARCHAR(50),
+                <br>
+                reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+                <br>
+             )
+            </p>
+
+            <br>
+            The following examples are equal to the examples from the previous page (<a href="https://www.w3schools.com/php/php_mysql_insert.asp" target="_blank">PHP Insert Data Into MySQL</a>), except that we have added one single line of code to retrieve the ID of the last inserted record. We also echo the last inserted ID. 
+            <br>
+            <br>
+            <b>Example (MySQLi Object-Oriented):- </b> 
+            <br>
+            <iframe src="58. PHP MySQL Get Last ID-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            <b>Example (MySQLi Procedural):- </b>
+            <br>
+            <iframe src="58. PHP MySQL Get Last ID-Example 2.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            <b>Example (PDO):- </b>
+            <br>
+            <iframe src="58. PHP MySQL Get Last ID-Example 3.php" height="100" width="100%"></iframe>
+        </div>
+    </body>
+</html>

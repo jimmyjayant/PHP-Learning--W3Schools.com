@@ -39,8 +39,59 @@
             Insert Data Into MySQL Using MySQLi and PDO 
         </h2>
 
-        <Div>
-            
-        </Div>
+        <div>
+            After a database and a table have been created, we can start adding data in them. 
+            <br>
+            Here are some syntax rules to follow:- 
+            <br>
+            <ul>
+                <li>The SQL query must be quoted in PHP</li>
+                <li>String values inside the SQL query must be quoted</li>
+                <li>Numeric values must not be quoted</li>
+                <li>The word NULL must not be quoted</li>
+            </ul>
+
+            <br>
+            The INSERT INTO statement is used to add new records to a MySQL table: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             INSERT INTO table_name (column1, column2, column3, .... ) 
+             <br>
+             VALUES (value1, value2, value3, ... ) 
+            </p>
+
+            <br>
+            To learn more about SQL, please visit our <a href="https://www.w3schools.com/sql/default.asp" target="_blank">SQL tutorial</a>. 
+            <br>
+            In the previous chapter we created an empty table named "MyGuests" with five columns: "id", "firstname", "lastname", "email" and "reg_date". Now, let us fill the table with data. 
+
+            <br>
+
+            <p class="edit1">
+                <strong>Note: </strong>If a column is AUTO_INCREMENT (like the "id" column) or TIMESTAMP with default update of current_timestamp (like the "reg_date" column), it is no need to be specified in the SQL query; MySQL will automatically add the value. 
+            </p>
+
+            <br>
+
+            The following examples add a new record to the "MyGuests" table: 
+            <br>
+            Example (MySQLi Object-Oriented):- 
+            <br>
+            <iframe src="57. PHP MySQL Insert Data-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            Example (MySQLi Procedural):- 
+            <br>
+            <iframe src="57. PHP MySQL Insert Data-Example 2.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            Example (PDO):- 
+            <br>
+            <iframe src="57. PHP MySQL Insert Data-Example 3.php" height="100" width="100%"></iframe>
+        </div>
+
+        
 </body>
 </html>
