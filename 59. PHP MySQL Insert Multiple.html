@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP MySQL Insert Multiple                
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP MySQL Insert Multiple Records                   
+        </h1>
+
+        <hr>
+
+        <h2>
+            Insert Multiple Records Into MySQL Using MySQLi and PDO 
+        </h2>
+
+        <div>
+            Multiple SQL statements must be executed with the <span class="edit">mysqli_multi_query()</span> function. 
+            <br>
+            The following examples add three new records to the "MyGuests" table. 
+            <br>
+            <b>Example (MySQLi Object-Oriented):- </b>
+            <br>
+            <iframe src="59. PHP MySQL Insert Multiple-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+
+            <p class="edit1">
+                Note that each SQL statement must be separated by a semicolon. 
+            </p>
+
+            <br>
+            <br>
+            <b>Example (MySQLi Procedural):- </b>
+            <br>
+            <iframe src="59. PHP MySQL Insert Multiple-Example 2.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            The PDO way is a little bit different. 
+            <br>
+            <br>
+            <b>Example (PDO):- </b>
+            <br>
+            <iframe src="59. PHP MySQL Insert Multiple-Example 3.php" height="100" width="100%"></iframe>
+        </div>
+
+        
+    </body>
+</html>

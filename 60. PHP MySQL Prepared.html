@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP MySQL Prepared                
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP MySQL Prepared Statements                    
+        </h1>
+
+        <hr>
+
+        <div>
+            Prepared Statements are very useful against SQL injections. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Prepared Statements and Bound Parameters 
+        </h2>
+
+        <div>
+            A prepared statement is a feature used to execute the same (or similar) SQL statements repeatedly with high efficiency. 
+            <br>
+            Prepared statements basically work like this: 
+            <br>
+            <ol>
+                <li>Prepare: A SQL statement template is created and sent to the database. Certain values are left unspecified, called parameters (labeled "?"). Example: INSERT INTO MyGuests VALUES(?, ?, ?)</li>
+                <li>The database parses, compiles, and performs query optimization on the SQL statement template, and stores the result without executing it</li>
+                <li>Execute: At a later time, the application binds the values to the parameters, and the database executes the statement. The application may execute the statement as many times as it wants with different values</li>
+            </ol>
+
+            <br>
+            Compared to executing SQL statements directly, prepared statements have three main advantages: 
+            <br>
+            <ol>
+                <li>Prepared statements reduce parsing time as the preparation on the query is done only once (although the statement is executed multiple times)</li>
+                <li>Bound parameters minimize bandwidth to the server as you need send only the parameters each time, and not the whole query</li>
+                <li>Prepared statements are very useful against SQL injections, because parameter values, which are transmitted later using a different protocol, need not be correctly escaped. If the original statement template is not derived from external input, SQL injection cannot occur.</li>
+            </ol>
+        </div>
+
+        <hr>
+
+        <h2>
+            Prepared Statements in MySQLi 
+        </h2>
+
+        <div>
+            The following example uses prepared statements and bound parameters in MySQLi. 
+            <br>
+            <b>Example (MySQLi with Prepared Statements):- </b>
+            <br>
+            <iframe src="60. PHP MySQL Prepared-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            Code lines to explain from the example above: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+                "INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)" 
+            </p>
+
+            <br>
+            In our SQL, we insert a question mark (?) where we want to substitute in an integer, string, double or blob value. 
+            <br>
+            Then, have a look at the bind_param() function: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             $stmt->bind_param("sss", $firstname, $lastname, $email); 
+            </p>
+
+            <br>
+            This function binds the parameters to the SQL query and tells the database what the parameters are. The "sss" argument lists the types of data that the parameters are. The s character tells mysql that the parameter is a string. 
+            <br>
+            The argument may be one of four types:- 
+            <br>
+            <ul>
+                <li>i - integer</li>
+                <li>d - double</li>
+                <li>s - string</li>
+                <li>b - BLOB</li>
+            </ul>
+
+            <br>
+            We must have one of these for each parameter. 
+            <br>
+            By telling mysql what type of data to expect, we minimize the risk of SQL injections. 
+            <br>
+            <p class="edit1">
+                <strong>Note: </strong>If we want to insert any data from external sources (like user input), it is very important that the data is sanitized and validated. 
+            </p>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            Prepared Statements in PDO 
+        </h2>
+
+        <div>
+            The following example uses prepared statements and bound parameters in PDO. 
+            <br>
+            <b>Example (PDO with Prepared Statements):- </b>
+            <br>
+            <iframe src="60. PHP MySQL Prepared-Example 2.php" height="100" width="100%"></iframe>
+        </div>
+
+        <br>
+        <br>
+    </body>
+</html>
