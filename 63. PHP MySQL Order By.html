@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP MySQL Order By                  
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP MySQL Use The ORDER BY Clause                      
+        </h1>
+
+        <hr>
+
+        <h2>
+            Select and Order Data From a MySQL Database 
+        </h2>
+
+        <div>
+            The ORDER BY clause is used to sort the result-set in ascending or descending order. 
+            <br>
+            The ORDER BY clause sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword. 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             SELECT column_name(s) FROM table_name ORDER BY column_name(s) ASC|DESC 
+            </p>
+
+            <br>
+            To learn more about SQL, please visit our <a href="https://www.w3schools.com/sql/default.asp" target="_blank">SQL tutorial</a>. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Select and Order Data With MySQLi 
+        </h2>
+
+        <div>
+            The following example selects the id, firstname and lastname columns from the MyGuests table. The records will be ordered by the lastname column. 
+            <br>
+            <b>Example (MySQLi Object-Oriented):- </b>
+            <br>
+            <iframe src="63. PHP MySQL Order By-Example 1.php" height="500" width="100%"></iframe>
+
+            <br>
+            <br>
+            Code lines to explain from the example above: 
+            <br>
+            First, we set up the SQL query that selects the id, firstname and lastname columns from the MyGuests table. The records will be ordered by the lastname column. The next line of code runs the query and puts the resulting data into a variable called $result. 
+            <br>
+            Then, the <span class="edit">function num_rows()</span> checks if there are more than zero rows returned. 
+            <br>
+            <br>
+            If there are more than zero rows returned, the function <span class="edit">fetch_assoc()</span> puts all the results into an associative array that we can loop through. The <span class="edit">while()</span> loop loops through the result set and outputs the data from the id, firstname and lastname columns. 
+            <br>
+            The following example shows the same as the example above, in the MySQLi procedural way. 
+            <br>
+            <b>Example (MySQLi Procedural):- </b>
+            <br>
+            <iframe src="63. PHP MySQL Order By-Example 2.php" height="500" width="100%"></iframe>
+
+            <br>
+            <br>
+            You can also put the result in a HTML table. 
+            <br>
+            <b>Example (MySQLi Object-Oriented):- </b>
+            <br>
+            <iframe src="63. PHP MySQL Order By-Example 3.php" height="500" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Select Data With PDO (+ Prepared Statements) 
+        </h2>
+
+        <div>
+            The following example uses prepared statements. 
+            <br>
+            Here we select the id, firstname and lastname columns from the MyGuests table. The records will be ordered by the lastname column, and it will be displayed in a HTML table. 
+            <br>
+            <b>Example (PDO):- </b>
+            <br>
+            <iframe src="63. PHP MySQL Order By-Example 4.php" height="500" width="100%"></iframe>
+        </div>
+    </body>
+</html>

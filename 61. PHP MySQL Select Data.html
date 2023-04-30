@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP MySQL Select Data                 
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP MySQL Select Data                     
+        </h1>
+
+        <hr>
+
+        <h2>
+            Select Data From a MySQL Database 
+        </h2>
+
+        <div>
+            The SELECT statement is used to select data from one or more tables: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             SELECT column_name(s)[different column names separated by comma] FROM table_name 
+            </p>
+
+            <br>
+
+            or we can use the * character to select ALL columns from a table: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             SELECT * FROM table_name 
+            </p>
+
+            <br>
+            To learn more about SQL, please visit our <a href="https://www.w3schools.com/sql/default.asp" target="_blank">SQL tutorial</a>. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Select Data With MySQLi 
+        </h2>
+
+        <div>
+            The following example selects the id, firstname and lastname columns from the MyGuests table and displays it on the page. 
+            <br>
+            <b>Example (MySQLi Object-Oriented):- </b>
+            <br>
+            <iframe src="61. PHP MySQL Select Data-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            Code lines to explain from the example above: 
+            <br>
+            First, we set up an SQL query that selects the id, firstname and lastname columns from the MyGuests table. The next line of code runs the query and puts the resulting data into a variable called $result. 
+            <br>
+            Then, the function <span class="edit">num_rows()</span> checks if there are more than zero rows returned. 
+            <br>
+            If there are more than zero rows returned, the function <span class="edit">fetch_assoc()</span> puts all the results into an associative array that we can loop through. The <span class="edit">while()</span> loop loops through the result set and outputs the data from the id, firstname and lastname columns. 
+            <br>
+            The following example shows the same as the example above, in the MySQLi procedural way. 
+            <br>
+            <b>Example (MySQLi Procedural):- </b>
+            <br>
+            <iframe src="61. PHP MySQL Select Data-Example 2.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+
+            You can also put the result in a HTML table. 
+            <br>
+            <b>Example (MySQLi Object-Oriented):- </b>
+            <br>
+            <iframe src="61. PHP MySQL Select Data-Example 3.php" height="600" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Select Data With PDO (+ Prepared Statements)  
+        </h2>
+
+        <div>
+            The following example uses prepared statements. 
+            <br>
+            It selects the id, firstname and lastname columns from the MyGuests table and displays it in a HTML table. 
+            <br>
+            <b>Example (PDO):- </b>
+            <br>
+            <iframe src="61. PHP MySQL Select Data-Example 4.php" height="500" width="100%"></iframe>
+        </div>
+    </body>
+</html>
