@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP MySQL Limit Data                    
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP MySQL Limit Data Selections             
+        </h1>
+
+        <hr>
+
+        <h2>
+            Limit Data Selections From a MySQL Database 
+        </h2>
+
+        <div>
+            MySQL provides a LIMIT clause that is used to specify the number of records to return. 
+            <br>
+            The LIMIT clause makes it easy to code multi page results or pagination with SQL, and is very useful on large tables. Returning a large number of records can impact on performance. 
+            <br>
+            Assume we wish to select all records from 1 - 30 (inclusive) from a table called "Orders". The SQL query would then look like this: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             $sql = "SELECT * FROM Orders LIMIT 30"; 
+            </p>
+
+            <br>
+            When the SQL query above is run, it will return the first 30 records. 
+            <br>
+            What if we want to select records 16 - 25 (inclusive)? 
+            <br>
+            MySQL also provides a way to handle this: by using OFFSET. 
+            <br>
+            The SQL query below says "return only 10 records, start on record 16 (OFFSET 15)": 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             $sql = "SELECT * FROM Orders LIMIT 10 OFFSET 15"; 
+            </p>
+
+            <br>
+            You could also use a shorter syntax to achieve the same result: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             $sql = "SELECT * FROM Orders LIMIT 15, 10"; 
+            </p>
+
+            <br>
+            Notice that the numbers are reversed when you use a comma. 
+        </div>
+    </body>
+</html>

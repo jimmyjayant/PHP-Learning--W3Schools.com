@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP XML Parsers                    
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP XML Parsers              
+        </h1>
+
+        <hr>
+
+        <h2>
+            What is XML? 
+        </h2>
+
+        <div>
+            The XML language is a way to structure data for sharing across websites. 
+            <br>
+            Several web technologies like RSS Feeds and Podcasts are written in XML. 
+            <br>
+            XML is easy to create. It looks a lot like HTML, except that you make up your own tags. 
+            <br>
+            If you want to learn more about XML, please visit our <a href="https://www.w3schools.com/xml/default.asp" target="_blank">XML tutorial</a>. 
+        </div>
+
+        <hr>
+
+        <h2>
+            What is an XML Parser? 
+        </h2>
+
+        <div>
+            To read and update, create and manipulate an XML document, you will need an XML parser. 
+            <br>
+            In PHP there are two major types of XML parsers: 
+            <br>
+            <ul>
+                <li>Tree-Based Parsers</li>
+                <li>Event-Based Parsers</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>
+            Tree-Based Parsers 
+        </h2>
+
+        <div>
+            Tree-based parsers holds the entire document in Memory and transforms the XML document into a Tree structure. It analyzes the whole document, and provides access to the Tree elements (DOM). 
+            <br>
+            This type of parser is a better option for smaller XML documents, but not for large XML document as it causes major performance issues. 
+            <br>
+            Example of tree-based parsers: 
+            <br>
+            <ul>
+                <li>SimpleXML</li>
+                <li>DOM</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>
+            Event-Based Parsers 
+        </h2>
+
+        <div>
+            Event-based parsers do not hold the entire document in Memory, instead, they read in one node at a time and allow you to interact with in real time. Once you move onto the next node, the old one is thrown away. 
+            <br>
+            This type of parser is well suited for large XML documents. It parses faster and consumes less memory. 
+            <br>
+            Example of event-based parsers: 
+            <br>
+            <ul>
+                <li>XMLReader</li>
+                <li>XML Expat Parser</li>
+            </ul>
+        </div>
+    </body>
+</html>

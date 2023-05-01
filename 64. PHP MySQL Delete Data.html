@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP MySQL Delete Data                   
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+            .table1 {
+                width:100%;
+                border:0.1rem solid #ddd;
+                border-collapse:collapse;
+            }
+
+            .table1 tr {
+                height:3rem;
+            }
+
+            .table1 tr:nth-child(even) {
+                background-color:#f1f1f1;
+            }
+
+            .table1 th, .table1 td {
+                text-align:center;
+                padding:0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP MySQL Delete Data                      
+        </h1>
+
+        <hr>
+
+        <h2>
+            Delete Data From a MySQL Table Using MySQLi and PDO 
+        </h2>
+
+        <div>
+            The DELETE statement is used to delete records from a table. 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             DELETE FROM table_name 
+             <br>
+             WHERE some_column = some_value 
+            </p>
+
+            <br>
+
+            <p class="edit1">
+                <strong>
+                    Note the WHERE clause in the DELETE syntax:- 
+                </strong>
+                The WHERE clause specifies which record or records that should be deleted. If you omit the WHERE clause, all records will be deleted! 
+            </p>
+
+            <br>
+            To learn more about SQL, please visit our <a href="https://www.w3schools.com/sql/default.asp" target="_blank">SQL tutorial</a>. 
+            <br>
+            Let's look at the "MyGuests" table: 
+            <br>
+            <br>
+            <table class="table1">
+                <tr>
+                    <th>id</th>
+                    <th>firstname</th>
+                    <th>lastname</th>
+                    <th>email</th>
+                    <th>reg_date</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                    <td>2023-05-01 14:26:15</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Mary</td>
+                    <td>Moe</td>
+                    <td>mary@example.com</td>
+                    <td>2023-05-01 10:22:30</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Julie</td>
+                    <td>Dooley</td>
+                    <td>julie@example.com</td>
+                    <td>2023-05-01 10:48:23</td>
+                </tr>
+            </table>
+
+            <br>
+
+            The following examples delete the record with id=3 in the "MyGuests" table:- 
+            <br>
+            <b>Example (MySQLi Object-Oriented):- </b>
+            <br>
+            <iframe src="64. PHP MySQL Delete Data-Example 1.php" height="50" width="100%"></iframe>
+
+            <br>
+            <br>
+            <b>Example (MySQLi Procedural):- </b>
+            <br>
+            <iframe src="64. PHP MySQL Delete Data-Example 2.php" height="50" width="100%"></iframe>
+
+            <br>
+            <br>
+            <b>Example (PDO):- </b>
+            <br>
+            <iframe src="64. PHP MySQL Delete Data-Example 3.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            After the record is deleted, the table will look like this: 
+            <br>
+            <br>
+            <table class="table1">
+                <tr>
+                    <th>id</th>
+                    <th>firstname</th>
+                    <th>lastname</th>
+                    <th>email</th>
+                    <th>reg_date</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                    <td>2023-05-01 14:26:15</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Mary</td>
+                    <td>Moe</td>
+                    <td>mary@example.com</td>
+                    <td>2023-05-01 10:22:30</td>
+                </tr>
+        </div>
+    </body>
+</html>

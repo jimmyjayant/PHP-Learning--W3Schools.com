@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP SimpleXML Parser                    
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP SimpleXML Parser               
+        </h1>
+
+        <hr>
+
+        <div>
+            SimpleXML is a PHP extension that allows us to easily manipulate and get XML data. 
+        </div>
+
+        <hr>
+
+        <h2>
+            The SimpleXML Parser 
+        </h2>
+
+        <div>
+            SimpleXML is a tree-based parser. 
+            <br>
+            SimpleXML provides an easy way to getting an element's name, attributes and textual content if you know the XML document's structure or layout. 
+            <br>
+            SimpleXML turns an XML document into a data structure you can iterate through like a collection of arrays and objects. 
+            <br>
+            Compared to DOM or the Expat parser, SimpleXML takes a fewer lines of code to read text data from an element. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Installation 
+        </h2>
+
+        <div>
+            From PHP 5, the SimpleXML functions are part of the PHP core. No installation is required to use these functions. 
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP SimpleXML - Read From String 
+        </h2>
+
+        <div>
+            The PHP <span class="edit">simplexml_load_string()</span> function is used to read XML data from a string. 
+            <br>
+            Assume we have a variable that contains XML data, like this: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             $myXMLData = 
+             <br>
+             "&lt;?xml version='1.0' encoding='UTF-8'?&gt; 
+             <br>
+             &lt;note&gt; 
+             <br>
+             &lt;to&gt;Tove&lt;/to&gt; 
+             <br>
+             &lt;from&gt;Jani&lt;/from&gt; 
+             <br>
+             &lt;heading&gt;Reminder&lt;/heading&gt; 
+             <br>
+             &lt;body&gt;Don't forget me this weekend!&lt;/body&gt; 
+             <br>
+             &lt;/note&gt;"; 
+            </p>
+
+            <br>
+            <br>
+            The example below shows how to use the <span class="edit">simplexml_load_string()</span> function to read XML data from a string. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="68. PHP SimpleXML Parser-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            <br>
+            <strong>Error Handling Tip: </strong>Use the libxml functionality to retrieve all XML errors when loading the document and then iterate over the errors. The following example tries to load a broken XML string. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="68. PHP SimpleXML Parser-Example 2.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            PHP SimpleXML - Read From File 
+        </h2>
+
+        <div>
+            The PHP <span class="edit">simplexml_load_file()</span> function is used to read XML data from a file. 
+            <br>
+            Assume we have an XML file called "68. PHP SimpleXML Parser-note.xml", that looks like this: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?xml version="1.0" encoding="UTF-8"?&gt; 
+             <br>
+             &lt;note&gt; 
+             <br>
+             &lt;to&gt;Tove&lt;/to&gt; 
+             <br>
+             &lt;from&gt;Jani&lt;/from&gt; 
+             <br>
+             &lt;heading&gt;Reminder&lt;/heading&gt; 
+             <br>
+             &lt;body&gt;Don't forget me this weekend!&lt;/body&gt; 
+             <br>
+             &lt;/note&gt; 
+            </p>
+
+            <br>
+            The example below shows how to use the <span class="edit">simplexml_load_file()</span> function to read XML data from a file. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="68. PHP SimpleXML Parser-Example 3.php" height="100" width="100%"></iframe>
+
+            <br>
+            <strong>Tip: </strong>The next chapter shows how to get/retrieve node values from a XML file with SimpleXML! 
+        </div>
+
+        <hr>
+
+        <h2>
+            More PHP SimpleXML 
+        </h2>
+
+        <div>
+            For more information about the PHP SimpleXML functions, visit our <a href="https://www.w3schools.com/php/php_ref_simplexml.asp" target="_blank">PHP SimpleXML Reference</a>. 
+        </div>
+    </body>
+</html>
