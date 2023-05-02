@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP XML Expat                      
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP XML Expat Parser          
+        </h1>
+
+        <hr>
+
+        <div>
+            The built-in XML Expat Parser makes it possible to process XML documents in PHP. 
+        </div>
+
+        <hr>
+
+        <h2>
+            The XML Expat Parser 
+        </h2>
+
+        <div>
+            The Expat parser is an event-based parser. 
+            <br>
+            Look at the following XML fraction: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;from&gt;Jani&lt;/from&gt; 
+            </p>
+
+            <br>
+
+            An event-based parser reports the XML above as a series of three events: 
+            <br>
+            <ul>
+                <li>Start element: from</li>
+                <li>Start CDATA section, value: Jani</li>
+                <li>Close element: from</li>
+            </ul>
+
+            <br>
+            The XML Expat Parser functions are part of the PHP core. There is no installation needed to use these functions. 
+        </div>
+
+        <hr>
+
+        <h2>
+            The XML File 
+        </h2>
+
+        <div>
+            The XML file "68. PHP SimpleXML Parser-note.xml" will be used in the example below. 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+                &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                <br>
+                &lt;note&gt;
+                <br>
+                &lt;to&gt;Tove&lt;/to&gt;
+                <br>
+                &lt;from&gt;Jani&lt;/from&gt;
+                <br>
+                &lt;heading&gt;Reminder&lt;/heading&gt;
+                <br>
+                &lt;body&gt;Don't forget me this weekend!&lt;/body&gt;
+                <br>
+                &lt;/note&gt;
+            </p>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            Initializing the XML Expat Parser 
+        </h2>
+
+        <div>
+            We want to initialize the XML Expat Parser in PHP, define some handlers for different XML events, and then parse the XML file. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="70. PHP XML Expat-Example 1.php" height="200" width="100%"></iframe>
+
+            <br>
+            <br>
+            Example explained:- 
+            <br>
+            <ol>
+                <li>Initialize the XML parser with the <span class="edit">xml_parser_create()</span> function</li>
+                <li>Create functions to use with the different event handlers</li>
+                <li>Add the <span class="edit">xml_set_element_handler()</span> function to specify which function will be executed when the parser encounters the opening and closing tags</li>
+                <li>Add the <span class="edit">xml_set_character_data_handler()</span> function to specify which function will execute when the parser encounters character data</li>
+                <li>Parse the file "68. PHP SimpleXML Parser-note.xml" with the <span class="edit">xml_parse()</span> function</li>
+                <li>In case of an error, add <span class="edit">xml_error_string()</span> function to convert an XML error to a textual description</li>
+                <li>Call the <span class="edit">xml_parser_free()</span> function to release the memory allocated with the <span class="edit">xml_parser_create()</span> function</li>
+            </ol>
+        </div>
+
+        <hr>
+
+        <h2>
+            More PHP XML Expat Parser 
+        </h2>
+
+        <div>
+            For more information about the PHP Expat functions, visit our <a href="https://www.w3schools.com/php/php_ref_xml.asp" target="_blank">PHP XML Parser Reference</a>. 
+        </div>
+    </body>
+</html>

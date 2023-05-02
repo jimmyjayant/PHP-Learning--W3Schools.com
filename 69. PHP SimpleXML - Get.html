@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP SimpleXML - Get                     
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP SimpleXML - Get Node/Attribute Values                
+        </h1>
+
+        <hr>
+
+        <div>
+            SimpleXML is a PHP extension that allows us to easily manipulate and get XML data. 
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP SimpleXML - Get Node Values 
+        </h2>
+
+        <div>
+            Get the node values from the "68. PHP SimpleXML Parser-note.xml" file. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="69. PHP SimpleXML - Get-Example 1.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Another XML File 
+        </h2>
+
+        <div>
+            Assume we have an XML file called "69. PHP SimpleXML - Get-books.xml", that looks like this:- 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+                &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                <br>
+                &lt;bookstore&gt;
+                <br>
+                  &lt;book category="COOKING"&gt;
+                <br>
+                    &lt;title lang="en"&gt;Everyday Italian&lt;/title&gt;
+                <br>
+                    &lt;author&gt;Giada De Laurentiis&lt;/author&gt;
+                <br>
+                    &lt;year&gt;2005&lt;/year&gt;
+                <br>
+                    &lt;price&gt;30.00&lt;/price&gt;
+                <br>
+                  &lt;/book&gt;
+                <br>
+                  &lt;book category="CHILDREN"&gt;
+                <br>
+                    &lt;title lang="en"&gt;Harry Potter&lt;/title&gt;
+                <br>
+                    &lt;author&gt;J K. Rowling&lt;/author&gt;
+                <br>
+                    &lt;year&gt;2005&lt;/year&gt;
+                <br>
+                    &lt;price&gt;29.99&lt;/year&gt;
+                <br>
+                  &lt;/book&gt;
+                <br>
+                  &lt;book category="WEB"&gt;
+                <br>
+                    &lt;title lang="en-us"&gt;XQuery Kick Start&lt;/title&gt;
+                <br>
+                    &lt;author&gt;James McGovern&lt;/author&gt;
+                <br>
+                    &lt;year&gt;2003&lt;/year&gt;
+                <br>
+                    &lt;price&gt;49.99&lt;/price&gt;
+                <br>
+                  &lt;/book&gt;
+                <br>
+                  &lt;book category="WEB"&gt;
+                <br>
+                    &lt;title lang="en-us"&gt;Learning XML&lt;/title&gt;
+                <br>
+                    &lt;author&gt;Erik T. Ray&lt;/author&gt;
+                <br>
+                    &lt;year&gt;2003&lt;/year&gt;
+                <br>
+                    &lt;price&gt;39.95&lt;/price&gt;
+                <br>
+                  &lt;/book&gt;
+                <br>
+                &lt;/bookstore&gt;
+            </p>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            PHP SimpleXML - Get Node Values of Specific Elements 
+        </h2>
+
+        <div>
+            The following example gets the node value of the &lt;title&gt; element in the first and second &lt;book&gt; elements in the "69. PHP SimpleXML - Get-books.xml" file. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="69. PHP SimpleXML - Get-Example 2.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP SimpleXML - Get Node Values - Loop 
+        </h2>
+
+        <div>
+            The following example loops through all the &lt;book&gt; elements in the "69. PHP SimpleXML - Get-books.xml" file, and gets the node values of the &lt;title&gt;, &lt;author&gt;, &lt;year&gt;, and &lt;price&gt; elements. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="69. PHP SimpleXML - Get-Example 3.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP SimpleXML - Get Attribute Values 
+        </h2>
+
+        <div>
+            The following example gets the attribute value of the "category" attribute of the first &lt;book&gt; element and the attribute value of the "lang" attribute of the &lt;title&gt; element in the second &lt;book&gt; element. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="69. PHP SimpleXML - Get-Example 4.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            PHP SimpleXML - Get Attribute Values - Loop 
+        </h2>
+
+        <div>
+            The following example gets the attribute values of the &lt;title&gt; elements in the "69. PHP SimpleXML - Get-books.xml" file. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="69. PHP SimpleXML - Get-Example 5.php" height="100" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            More PHP SimpleXML 
+        </h2>
+
+        <div>
+            For more information about the PHP SimpleXML functions, visit our <a href="https://www.w3schools.com/php/php_ref_simplexml.asp" target="_blank">PHP SimpleXML Reference</a>. 
+
+            <br>
+            <br>
+        </div>
+    </body>
+</html>
