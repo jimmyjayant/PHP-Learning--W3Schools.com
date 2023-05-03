@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP XML DOM                      
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP XML DOM Parser           
+        </h1>
+
+        <hr>
+
+        <div>
+            The built-in DOM parser makes it possible to process XML documents in PHP. 
+        </div>
+
+        <hr>
+
+        <h2>
+            The XML DOM Parser 
+        </h2>
+
+        <div>
+            The DOM parser is a tree-based parser. 
+            <br>
+            Look at the following XML document fraction: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?xml version="1.0" encoding="UTF-8"?&gt; 
+             <br>
+             &lt;from&gt;Jani&lt;/from&gt; 
+            </p>
+
+            <br>
+            The DOM sees the XML above as a tree structure: 
+            <br>
+            <ul>
+                <li>Level 1: XML Document</li>
+                <li>Level 2: Root element: &lt;from&gt;</li>
+                <li>Level 3: Text element: "Jani"</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>
+            Installation 
+        </h2>
+
+        <div>
+            The DOM parser functions are part of the PHP core. There is no installation needed to use these functions. 
+        </div>
+
+        <hr>
+
+        <h2>
+            The XML File 
+        </h2>
+
+        <div>
+            The XML file below ("68. PHP SimpleXML Parser-note.xml") will be used in our example: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             &lt;?xml version="1.0" encoding="UTF-8"?&gt; 
+             <br>
+             &lt;note&gt; 
+             <br>
+             &lt;to&gt;Tove&lt;/to&gt; 
+             <br>
+             &lt;from&gt;Jani&lt;/from&gt; 
+             <br>
+             &lt;heading&gt;Reminder&lt;/heading&gt; 
+             <br>
+             &lt;body&gt;Don't forget me this weekend!&lt;/body&gt; 
+             <br>
+             &lt;/note&gt; 
+            </p>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            Load and Output XML 
+        </h2>
+
+        <div>
+            We want to initialize the XML parser, load the xml, and output it. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="71. PHP XML DOM-Example 1.php" height="100" width="100%"></iframe>
+
+            <br>
+            If you select "View source" in the browser window,  you will see the following HTML. 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+                &lt;?xml version="1.0" encoding="UTF-8"?&gt; 
+                <br>
+                &lt;note&gt; 
+                <br>
+                &lt;to&gt;Tove&lt;/to&gt; 
+                <br>
+                &lt;from&gt;Jani&lt;/from&gt; 
+                <br>
+                &lt;heading&gt;Reminder&lt;/heading&gt; 
+                <br>
+                &lt;body&gt;Don't forget me this weekend!&lt;/body&gt; 
+                <br>
+                &lt;/note&gt; 
+            </p>
+
+            <br>
+            The example above creates a DOMDocument-Object and loads the XML from "68. PHP SimpleXML Parser-note.xml" into it. 
+            <br>
+            Then the saveXML() function puts the internal XML document into a string, so we can output it. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Looping through XML 
+        </h2>
+
+        <div>
+            We want to initialize the XML parser, load the XML, and loop through all elements of the &lt;note&gt; element. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="71. PHP XML DOM-Example 2.php" height="200" width="100%"></iframe>
+
+            <br>
+            In the example above you see that there are empty text nodes between each element. 
+            <br>
+            When XML generates, it often contains white-spaces between the nodes. The XML DOM parser treats these as ordinary elements, and if you are not aware of them, they sometimes cause problems. 
+        </div>
+
+        <hr>
+
+        <div>
+            If you want to learn more about the XML DOM, please visit our <a href="https://www.w3schools.com/xml/default.asp" target="_blank">XML tutorial</a>. 
+
+            <br>
+            <br>
+        </div>
+    </body>
+</html>
