@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP AJAX                        
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP - AJAX and PHP            
+        </h1>
+
+        <hr>
+
+        <div>
+            AJAX is used to create more interactive applications. 
+        </div>
+
+        <hr>
+
+        <h2>
+            AJAX PHP Example 
+        </h2>
+
+        <div>
+            The following example will demonstrate how a web page can communicate with a web server while a user type characters in an input field. 
+            <br>
+            <iframe src="73. PHP AJAX-Example 1.php" height="200" width="100%"></iframe>
+        </div>
+
+        <hr>
+
+        <h2>
+            Example Explained 
+        </h2>
+
+        <div>
+            In the example above, when a user types a character in the input field, a function called "showHint()" is executed. 
+            <br>
+            The function is triggered by the onkeyup event. 
+            <br>
+            Here is the HTML code:- 
+            <br>
+            <b>Example:- </b>
+            <br>
+            <code>
+            &lt;!DOCTYPE html&gt;
+            <br>
+            &lt;html lang="en-in"&gt;
+            <br>
+            &lt;head&gt;
+            <br>
+            &lt;script&gt;
+            <br>
+            function showHint(str) {
+                <br>
+                if(str.length == 0) {
+                    <br>
+                    document.getElementById("txtHint").innerHTML = "";
+                    <br>
+                    return;
+                    <br>
+                }
+                <br>
+                else {
+                    <br>
+                    var xmlhttp = new XMLHttpRequest();
+                    <br>
+                    xmlhttp.onreadystatechange = function() {
+                        <br>
+                        if(this.readyState == 4 && this.status == 200) {
+                            <br>
+                            document.getElementById("txtHint").innerHTML = this.responseText;
+                            <br>
+                        }
+                        <br>
+                    }
+                    <br>
+                    xmlhttp.open("GET", "73. PHP AJAX-gethint.php?q="+str, true);
+                    <br>
+                    xmlhttp.send();
+                    <br>
+                }
+                <br>
+            }
+            <br>
+            &lt;/script&gt;
+            <br>
+            &lt;style&gt;
+            <br>
+            html {
+                <br>
+            font-size:calc(10px + 0.390625vw);
+            <br>
+            }
+            <br>
+            &lt;/style&gt;
+            <br>
+            &lt;body&gt;
+            <br>
+            &lt;b&gt;
+            <br>
+                Start typing a name in the input field below:
+                <br>
+            &lt;/b&gt;
+            <br>
+
+            &lt;br&gt;
+            <br>
+            &lt;br&gt;
+            <br>
+            &lt;form action=""&gt;
+            <br>
+            &lt;label for="fname"&gt;First name: &lt;/label&gt;
+            <br>
+            &lt;input type="text" id="fname" name="fname" onkeyup="showHint(this.value)"&gt;
+            <br>
+            &lt;/form&gt;
+            <br>
+            &lt;p&gt;
+            <br>
+            Suggestions: &lt;span id="txtHint"&gt;&lt;/span&gt;
+            <br>
+            &lt;/p&gt;
+            <br>
+            &lt;/body&gt;
+            <br>
+            &lt;/html&gt;
+            </code>
+            <br>
+            <br>
+            Code explanation: 
+            <br>
+            First, check if the input field is empty (str.length == 0). If it is, clear the content of the txtHint placeholder and exit the function. 
+            <br>
+            However, if the input field is not empty, do the following: 
+            <br>
+            <ul>
+                <li>Create an XMLHttpRequest object</li>
+                <li>Create the function to be executed when the server response is ready</li>
+                <li>Send the request off to a PHP file (73. PHP AJAX-gethint.php) on the server</li>
+                <li>Notice that q parameter is added to the url ("73. PHP AJAX-gethint.php?q=" +str)</li>
+                <li>And the str variable holds the content of the input field</li>
+            </ul>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            The PHP File = "73. PHP AJAX-gethint.php" 
+        </h2>
+
+        <div>
+            The PHP file checks an array of names, and returns the corresponding name(s) to the browser. 
+            <br>
+            <code>
+            &lt;?php
+            <br>
+// Array with names
+<br>
+$a[] = "Anna";
+<br>
+$a[] = "Brittany";
+<br>
+$a[] = "Cinderella";
+<br>
+$a[] = "Diana";
+<br>
+$a[] = "Eva";
+<br>
+$a[] = "Fiona";
+<br>
+$a[] = "Gunda";
+<br>
+$a[] = "Hege";
+<br>
+$a[] = "Inga";
+<br>
+$a[] = "Johanna";
+<br>
+$a[] = "Kitty";
+<br>
+$a[] = "Linda";
+<br>
+$a[] = "Nina";
+<br>
+$a[] = "Ophelia";
+<br>
+$a[] = "Petunia";
+<br>
+$a[] = "Amanda";
+<br>
+$a[] = "Raquel";
+<br>
+$a[] = "Cindy";
+<br>
+$a[] = "Doris";
+<br>
+$a[] = "Eve";
+<br>
+$a[] = "Evita";
+<br>
+$a[] = "Sunniva";
+<br>
+$a[] = "Tove";
+<br>
+$a[] = "Unni";
+<br>
+$a[] = "Violet";
+<br>
+$a[] = "Liza";
+<br>
+$a[] = "Elizabeth";
+<br>
+$a[] = "Ellen";
+<br>
+$a[] = "Wenche";
+<br>
+$a[] = "Vicky";
+<br>
+<br>
+// get the q parameter from URL
+<br>
+$q = $_REQUEST["q"];
+<br>
+<br>
+$hint = "";
+<br>
+// lookup all hints from array if $q is different from ""
+<br>
+if($q !== "") {
+    <br>
+    $q = strtolower($q);
+    <br>
+    $len = strlen($q);
+    <br>
+    foreach($a as $name) {
+        <br>
+        if(stristr($q, substr($name, 0, $len))) {
+            <br>
+            if($hint === "") {
+                <br>
+                $hint = $name;
+                <br>
+            }
+            <br>
+            else {
+                <br>
+                $hint .= ", $name";
+                <br>
+            }
+            <br>
+        }
+        <br>
+    }
+    <br>
+}
+<br>
+<br>
+// Output "no suggestion" if no hint was found or output correct values
+<br>
+echo $hint === "" ? "no suggestion" : $hint; 
+<br>
+?&gt; 
+</code>
+        </div>
+
+        <script>
+          function showHint(str) {
+            if(str.length == 0) {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            }
+            else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("txtHint").innerHTML = this.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "73. PHP AJAX-gethint.php?q="+str, true);
+                xmlhttp.send();
+            }
+          }
+        </script>
+    </body>
+</html>
