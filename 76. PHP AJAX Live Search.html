@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP AJAX Live Search                  
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Example - AJAX Live Search            
+        </h1>
+
+        <hr>
+
+        <div>
+            AJAX can be used to create more user-friendly and interactive searches. 
+        </div>
+
+        <hr>
+
+        <h2>
+            AJAX Live Search 
+        </h2>
+
+        <div>
+            The following example will demonstrate a live search, where you get search results while you type. 
+            <br>
+            Live search has many benefits compared to traditional searching: 
+            <br>
+            <ul>
+                <li>Results are shown as you type</li>
+                <li>Results narrow as you continue typing</li>
+                <li>If results become too narrow, remove characters to see a broader result</li>
+            </ul>
+
+            <br>
+            Search for a W3Schools page in the input field below: 
+            <br>
+
+            <form>
+            <input type="text" size="30" onkeyup="showResult(this.value)">
+            <div id="livesearch"></div>
+            </form>
+
+            <br>
+            The result in the example above are found in the XML file (<a href="76. PHP AJAX Live Search-links.xml" target="_blank">links.xml</a>). To make this example small and simple, only six results are available. 
+        </div>
+
+        <hr>
+
+        <h2>
+            Example Explained - The HTML Page 
+        </h2>
+
+        <div>
+            When a user types a character in the input field above, the function "showResult()" is executed. The function is triggered by the "onkeyup" event. 
+            <br>
+            <br>
+            <code>
+                &lt;html&gt; 
+                <br>
+                &lt;head&gt; 
+                <br>
+                &lt;script&gt; 
+                <br>
+                function showResult(str) {
+                    <br>
+                    if(str.length == 0) {
+                        <br>
+                        document.getElementById("livesearch").innerHTML = "";
+                        <br>
+                        document.getElementById("livesearch").style.border="0px";
+                        <br>
+                        return;
+                        <br>
+                    }
+                    <br>
+                    var xmlhttp = new XMLHttpRequest();
+                    <br>
+                    xmlhttp.onreadystatechange = function() {
+                        <br>
+                        if(this.readyState == 4 && this.status == 200) {
+                            <br>
+                            document.getElementById("livesearch").innerHTML = this.responseText;
+                            <br>
+                            document.getElementById("livesearch").style.border="0.1rem solid green"; 
+                            <br>
+                        }
+                        <br>
+                    }
+                    <br>
+                    xmlhttp.open("GET", "76. PHP AJAX Live Search-livesearch.php?q=" + str, true); 
+                    <br>
+                    xmlhttp.send(); 
+                    <br>
+                }
+                <br>
+                &lt;/script&gt; 
+                <br>
+                &lt;/head&gt; 
+                <br>
+                &lt;body&gt; 
+                <br>
+                &lt;form&gt; 
+                <br>
+                &lt;input type="text" size="30" onkeyup="showResult(this.value)"&gt; 
+                <br>
+                &lt;div id="livesearch"&gt;&lt;/div&gt; 
+                <br>
+                &lt;/form&gt; 
+                <br>
+                &lt;/body&gt; 
+                <br>
+                &lt;/html&gt; 
+            </code>
+
+            <br>
+            <br>
+            Source code explanation:- 
+            <br>
+            If the input field is empty (str.length == 0), the function clears the content of the livesearch placeholder and exits the function. 
+            <br>
+            If the input field is not empty, the showResult() function executes the following: 
+            <br>
+            <ul>
+                <li>Create an XMLHttpRequest object</li>
+                <li>Create the function to be executed when the server response is ready</li>
+                <li>Send the request off to a file on the server</li>
+                <li>Notice that a parameter (q) is added to the URL (with the content of the input field)</li>
+            </ul>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            The PHP File 
+        </h2>
+
+        <div>
+            The page on the server called by the JavaScript above is a PHP file called "76. PHP AJAX Live Search-livesearch.php". 
+            <br>
+            The source code in "76. PHP AJAX Live Search-livesearch.php" searches an XML file for titles matching the search string and returns the result. 
+            <br>
+            <br>
+            <code>
+             &lt;?php
+             <br>
+             $xmlDoc = new DOMDocument();
+             <br>
+             $xmlDoc->load("76. PHP AJAX Live Search-links.xml");
+             <br>
+             <br>
+             $x=$xmlDoc->getElementsByTagName('link');
+             <br>
+             <br>
+             // get the q parameter from URL 
+             <br>
+             $q = $_GET['q'];
+             <br>
+             <br>
+             // lookup all links from the xml file if length of q&gt;0 
+             <br>
+             if(strlen($q)&gt;0) {
+                <br>
+                $hint = "";
+                <br>
+                for($i=0; $i&lt;($x-&gt;length); $i++) {
+                    <br>
+                    $y = $x-&gt;item($i)-&gt;getElementsByTagName('title'); 
+                    <br>
+                    $z = $x-&gt;item($i)-&gt;getElementsByTagName('url'); 
+                    <br>
+                    if($y-&gt;item(0)-&gt;nodeType == 1) {
+                        <br>
+                        // find a link matching the search text
+                        <br>
+                        if(stristr($y-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue, $q)) {
+                            <br>
+                            if($hint=="") {
+                                <br>
+                                $hint="&lt;a href='" . 
+                                <br>
+                                $z-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue . 
+                                <br>
+                                "' target='_blank'&gt;" . 
+                                <br>
+                                $y-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue . "&lt;/a&gt;"; 
+                                <br>
+                            }
+                            <br>
+                            else {
+                             <br>
+                             $hint=$hint . "&lt;br /&gt;&lt;/a href='" . 
+                             <br>
+                             $z-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue . 
+                             <br>
+                             "' target='_blank'&gt;" . 
+                             <br>
+                             $y-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue . "&lt;/a&gt;"; 
+                             <br>
+                            }
+                            <br>
+                        }
+                        <br>
+                    }
+                    <br>
+                }
+                <br>
+             }
+             <br>
+             <br>
+             // Set output to "no suggestion" if no hint is found 
+             <br>
+             // or to the correct values
+             <br>
+             if($hint == "") {
+                <br>
+                $response = "no suggestion"; 
+                <br>
+             }
+             <br>
+             else {
+                <br>
+                $response = $hint; 
+                <br>
+             }
+
+             <br>
+             <br>
+             // output the response 
+             <br>
+             echo $response; 
+             <br>
+             ?&gt; 
+            </code>
+
+            <br>
+            <br>
+            If there is any text sent from the JavaScript (strlen($q)&gt;0), the following happens: 
+            <br>
+            <ul>
+                <li>Load an XML file into a new XML Dom object</li>
+                <li>Loop through all &lt;title&gt; elements to find matches from the text sent from the JavaScript</li>
+                <li>Sets the correct url and title in the "$response" variable. If more than one match is found, all matches are added to the variable</li>
+                <li>If no matches are found, the $response variable is set to "no suggestion"</li>
+            </ul>
+        </div>
+
+        <script>
+            function showResult(str) {
+                if(str.length == 0) {
+                    document.getElementById("livesearch").innerHTML = "";
+                    document.getElementById("livesearch").style.border="0px";
+                    return;
+                }
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("livesearch").innerHTML = this.responseText;
+                        document.getElementById("livesearch").style.border = "0.1rem solid green";
+                    }
+                }
+                xmlhttp.open("GET", "76. PHP AJAX Live Search-livesearch.php?q="+str, true);
+                xmlhttp.send(); 
+            }
+        </script>
+    </body>
+</html>

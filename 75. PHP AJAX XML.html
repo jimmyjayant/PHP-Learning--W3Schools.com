@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP AJAX XML                   
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Example - AJAX and XML             
+        </h1>
+
+        <hr>
+
+        <div>
+            AJAX can be used for interactive communication with an XML file. 
+        </div>
+
+        <hr>
+
+        <h2>
+            AJAX XML Example 
+        </h2>
+
+        <div>
+            The following example will demonstrate how a web page can fetch information from a XML file with AJAX. 
+            <br>
+            <b>Example:- </b> 
+            <br>
+            <form>
+            <select name="cds" onchange="showCD(this.value)">
+                <option value="">Select a CD:</option>
+                <option value="Bob Dylan">Bob Dylan</option>
+                <option value="Bee Gees">Bee Gees</option>
+                <option value="Cat Stevens">Cat Stevens</option>
+            </select>
+            </form>
+            <br>
+            <div id="txtHint">
+                <b>
+                    CD info will be listed here... 
+                </b>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>
+            Example Explained - The HTML Page 
+        </h2>
+
+        <div>
+            When a user selects a CD in the dropdown list above, a function called "showCD()" is executed. The function is triggered by the "onchange" event. 
+            <br>
+            <code>
+            &lt;html&gt; 
+            <br>
+            &lt;head&gt; 
+            <br>
+            &lt;script&gt;
+            <br>
+            function showCD(str) {
+                <br>
+                if(str == "") {
+                <br>
+                document.getElementById("txtHint").innerHTML = "";
+                <br>
+                return; 
+                <br>
+                }
+                <br>
+                var xmlhttp = new XMLHttpRequest();
+                <br>
+                xmlhttp.onreadystatechange = function() {
+                    <br>
+                    if(this.readyState == 4 && this.status == 200) {
+                        <br>
+                        document.getElementById("txtHint").innerHTML = this.responseText; 
+                        <br>
+                    }
+                    <br>
+                }
+                <br>
+                xmlhttp.open("GET", "75. PHP AJAX XML-getcd.php?q=" + str, true); 
+                <br>
+                xmlhttp.send(); 
+                <br>
+            }
+            <br>
+            &lt;/script&gt; 
+            <br>
+            &lt;/head&gt; 
+            <br>
+            &lt;body&gt; 
+            <br>
+            &lt;form&gt; 
+            <br>
+            &lt;select name="cds" onchange="showCD(this.value)"&gt; 
+            <br>
+            &lt;option value=""&gt;Select a CD:&lt;/option&gt; 
+            <br>
+            &lt;option value="Bob Dylan"&gt;Bob Dylan&lt;/option&gt; 
+            <br>
+            &lt;option value="Bee Gees"&gt;Bee Gees&lt;/option&gt; 
+            <br>
+            &lt;option value="Cat Stevens"&gt;Cat Stevens&lt;/option&gt; 
+            <br>
+            &lt;/select&gt; 
+            <br>
+            &lt;/form&gt; 
+            <br>
+            &lt;div id="txtHint"&gt;
+            <br>
+            &lt;b&gt; 
+            <br>
+            CD info will be listed here.... 
+            <br>
+            &lt;/b&gt; 
+            <br>
+            &lt;/div&gt; 
+            <br>
+            &lt;/body&gt; 
+            <br>
+            &lt;/html&gt; 
+            </code>
+
+            <br>
+            <br>
+            The showCD() function does the following: 
+            <br>
+            <ul>
+                <li>Check if a CD is selected</li>
+                <li>Create an XMLHttpRequest object</li>
+                <li>Create the function to be executed when the server response is ready</li>
+                <li>Send the request off to a file on the server</li>
+                <li>Notice that a parameter (q) is added to the URL (with the content of the dropdown list)</li>
+            </ul>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            The PHP File 
+        </h2>
+
+        <div>
+            The page on the server called by the JavaScript above is a PHP file called "75. PHP AJAX XML-getcd.php". 
+            <br>
+            The PHP script loads an XML document, "75. PHP AJAX XML-cd_catalog.xml", runs a query against the XML file, and returns the result as HTML. 
+            <br>
+            <code>
+             &lt;?php
+             <br>
+             $q = $_GET['q']; 
+             <br>
+             <br>
+             $xmlDoc = new DOMDocument();
+             <br>
+             $xmlDoc-&gt;load("75. PHP AJAX XML-cd_catalog.xml");
+             <br>
+             $x = $xmlDoc-&gt;getElementsByTagName('ARTIST'); 
+             <br>
+             <br>
+             for($i=0; $i&lt;=$x-&gt;length-1;$i++) {
+                <br>
+                // Process only element nodes
+                <br>
+                if($x-&gt;item($i)-&gt;nodeType == 1) {
+                    <br>
+                    if($x-&gt;item($i)-&gt;childNodes-&gt;item(0)-&gt;nodeValue == $q) {
+                        <br>
+                        $y = ($x-&gt;item($i)-&gt;parentNode); 
+                        <br>
+                    }
+                    <br>
+                }
+                <br>
+             }
+
+             <br>
+             <br>
+             $cd = ($y-&gt;childNodes); 
+             <br>
+             for($i=0;$i&lt;$cd-&gt;length;$i++) {
+                <br>
+                // Process only element nodes 
+                <br>
+                if($cd-&gt;item($i)-&gt;nodeType == 1) {
+                    <br>
+                    echo ("&lt;b&gt;" . $cd-&gt;item($i)-&gt;nodeName . ":&lt;/b&gt;"); 
+                    <br>
+                    echo ($cd-&gt;item($i)-&gt;childNodes-&gt;item(0)-&gt;nodeValue); 
+                    <br>
+                    echo ("&lt;br&gt;");
+                    <br>
+                }
+                <br>
+             }
+             <br>
+             ?&gt; 
+            </code>
+
+            <br>
+            <br>
+            When the CD query is sent from the JavaScript to the PHP page, the following happens: 
+            <br>
+            <ol>
+                <li>PHP creates an XML DOM object</li>
+                <li>Find all &lt;artist&gt; elements that matches the name sent from the JavaScript</li>
+                <li>Output the album information (send to the "txtHint" placeholder)</li>
+            </ol>
+        </div>
+
+        <script>
+            function showCD(str) {
+                if(str == "") {
+                    document.getElementById("txtHint").innerHTML = "";
+                    return;
+                }
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("txtHint").innerHTML = this.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "75. PHP AJAX XML-getcd.php?q=" + str, true);
+                xmlhttp.send();
+            }
+        </script>
+    </body>
+</html>

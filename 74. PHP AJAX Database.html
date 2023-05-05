@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP AJAX Database                   
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+
+            .table1 {
+                width:100%;
+                border:0.1rem solid grey;
+                border-collapse:collapse;
+            }
+
+            .table1 tr {
+                height:3rem;
+            }
+
+            .table1 tr:nth-child(even) {
+                background-color:#f1f1f1;
+            }
+
+            .table1 th {
+                padding:0.5rem;
+                border:0.1rem solid grey;
+            }
+
+            .table1 td {
+                text-align:center;
+                padding:0.5rem;
+                border:0.1rem solid grey;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP - AJAX and MySQL            
+        </h1>
+
+        <hr>
+
+        <div>
+            AJAX can be used for interactive communication with a database. 
+        </div>
+
+        <hr>
+
+        <h2>
+            AJAX Database Example 
+        </h2>
+
+        <div>
+            The following example will demonstrate how a web page can fetch information from a database with AJAX. 
+            <br>
+            Example:- 
+            <br>
+            <iframe src="74. PHP AJAX Database-createdb.php" height="100" width="100%"></iframe>
+            
+            <br>
+
+            <iframe src="74. PHP AJAX Database-createtable.php" height="50" width="100%"></iframe>
+
+            <br>
+
+            <iframe src="74. PHP AJAX Database-insertdata.php" height="50" width="100%"></iframe>
+
+            <br>
+
+            <form>
+                <select name="users" onchange="showUser(this.value)">
+                <option value="">Select a person:</option>
+                <option value="1">Peter Griffin</option>
+                <option value="2">Lois Griffin</option>
+                <option value="3">Joseph Swanson</option>
+                <option value="4">Glenn Quagmire</option>
+                </select>
+            </form>
+            <br>
+            <div id="txtHint">
+                <b>
+                    Person info will be listed here.... 
+                </b>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>
+            Example Explained - The MySQL Database 
+        </h2>
+
+        <div>
+            The database table we use in the example above looks like this: 
+            <br>
+            <table class="table1">
+                <tr>
+                    <th>id</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Age</th>
+                    <th>Hometown</th>
+                    <th>Job</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                    <td>41</td>
+                    <td>Quahog</td>
+                    <td>Brewery</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Lois</td>
+                    <td>Griffin</td>
+                    <td>40</td>
+                    <td>Newport</td>
+                    <td>Piano Teacher</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Joseph</td>
+                    <td>Swanson</td>
+                    <td>39</td>
+                    <td>Quahog</td>
+                    <td>Police Officer</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Glenn</td>
+                    <td>Quagmire</td>
+                    <td>41</td>
+                    <td>Quahog</td>
+                    <td>Pilot</td>
+                </tr>
+            </table>
+        </div>
+
+        <hr>
+
+        <h2>
+            Example Explained 
+        </h2>
+
+        <div>
+            In the example above, when a user selects a person in the dropdown list above, a function called "showUser()" is executed. 
+            <br>
+            The function is triggered by the onchange event. 
+            <br>
+            Here is the HTML code. 
+            <br>
+            Example:- 
+            <br>
+            <code>
+                &lt;!DOCTYPE html&gt; 
+                <br>
+                &lt;html&gt; 
+                <br>
+                &lt;head&gt; 
+                <br>
+                &lt;script&gt; 
+                <br>
+                function showUser(str) {
+                    <br>
+                    if(str == "") {
+                        <br>
+                        document.getElementById("txtHint").innerHTML = "";
+                        <br>
+                        return;
+                        <br>
+                    }
+                    <br>
+                    var xmlhttp = new XMLHttpRequest(); 
+                    <br>
+                    xmlhttp.onreadystatechange = function() {
+                        <br>
+                        if(this.readyState == 4 && this.status == 200) {
+                            <br>
+                            document.getElementById("txtHint").innerHTML = this.responseText; 
+                            <br>
+                        }
+                        <br>
+                    }; 
+                    <br>
+                    xmlhttp.open("GET", "74. PHP AJAX Database-getuser.php?q=" + str, true);
+                    <br>
+                    xmlhttp.send();
+                    <br>
+                }
+                <br>
+                &lt;/script&gt; 
+                <br>
+                &lt;/head&gt; 
+                <br>
+                &lt;body&gt; 
+                <br>
+                &lt;form&gt; 
+                <br>
+                &lt;select name="users" onchange="showUser(this.value)"&gt; 
+                <br>
+                &lt;option value=""&gt;Select a person:&lt;/option&gt; 
+                <br>
+                &lt;option value="1"&gt;Peter Griffin&lt;/option&gt; 
+                <br>
+                &lt;option value="2"&gt;Lois Griffin&lt;/option&gt; 
+                <br>
+                &lt;option value="3"&gt;Joseph Swanson&lt;/option&gt; 
+                <br>
+                &lt;option value="4"&gt;Glenn Quagmire&lt;/option&gt; 
+                <br>
+                &lt;/select&gt; 
+                <br>
+                &lt;/form&gt; 
+                <br>
+                <br>
+                &lt;div id="txtHint"&gt;&lt;b&gt;Person info will be listed here.&lt;/b&gt;&lt;/div&gt; 
+                <br>
+                &lt;/body&gt; 
+                <br>
+                &lt;/html&gt; 
+            </code>
+
+            <br>
+            <br>
+            Code explanation:- 
+            <br>
+            First, check if person is selected. If no person is selected (str == ""), clear the content of txtHint and exit the function. If a person is selected, do the following: 
+            <br>
+            <ul>
+                <li>Create an XMLHttpRequest object</li>
+                <li>Create the function to be executed when the server response is ready</li>
+                <li>Send the request off to a file on the server</li>
+                <li>Notice that a parameter (q) is added to the URL (with the content of the dropdown list)</li>
+            </ul>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            The PHP File 
+        </h2>
+
+        <div>
+            The page on the server called by the JavaScript above is a PHP file called "74. PHP AJAX Database-getuser.php". 
+            <br>
+            The source code in "74. PHP AJAX Database-getuser.php" runs a query against a MySQL database, and returns the result in a HTML table. 
+            <br>
+            Following is the source code of PHP File:- 
+            <br>
+            <code>
+                &lt;!DOCTYPE html&gt; 
+                <br>
+                &lt;html&gt; 
+                <br>
+                &lt;head&gt; 
+                <br>
+                &lt;style&gt; 
+                <br>
+                table {
+                    <br>
+                    width:100%;
+                    <br>
+                    border:0.1rem solid grey; 
+                    <br>
+                    border-collapse:collapse; 
+                    <br>
+                }
+                <br>
+                <br>
+                td, th {
+                    <br>
+                    padding:0.5rem; 
+                    <br>
+                    border: 0.1rem solid grey;
+                    <br>
+                    text-align:center; 
+                    <br>
+                }
+
+                <br>
+                <br>
+                tr:nth-child(even) {
+                    <br>
+                    background-color:#f1f1f1;  
+                    <br>
+                }
+                <br>
+                &lt;/style&gt; 
+                <br>
+                &lt;/head&gt; 
+                <br>
+                &lt;body&gt; 
+                <br>
+                &lt;?php
+                <br>
+                $servername = "localhost";
+                <br>
+                $username = "root";
+                <br>
+                $password = "";
+                <br>
+                $dbname = "ajax_demo";
+                <br>
+                <br>
+                $q = intval($_GET['q']); 
+                <br>
+                <br>
+                $conn = mysqli_connect($servername, $username, $password, $dbname);
+                <br>
+                if(!$conn) {
+                    <br>
+                    die("Could not connect: " . mysqli_connect_error()); 
+                    <br>
+                }
+
+                <br>
+                <br>
+
+                $sql = "SELECT * FROM user WHERE id = '" . $q . "'"; 
+                <br>
+                $result = mysqli_query($conn,$sql);
+
+                <br>
+                <br>
+                echo "&lt;table&gt;
+                <br>
+                &lt;tr&gt;
+                <br>
+                &lt;th&gt;Firstname&lt;/th&gt;
+                <br>
+                &lt;th&gt;Lastname&lt;/th&gt;
+                <br>
+                &lt;th&gt;Age&lt;/th&gt;
+                <br>
+                &lt;th&gt;Hometown&lt;/th&gt;
+                <br>
+                &lt;th&gt;Job&lt;/th&gt;
+                <br>
+                &lt;/tr&gt;";
+                <br>
+                <br>
+                while($row = mysqli_fetch_array($result)) {
+                    <br>
+                    echo "&lt;tr&gt;";
+                    <br>
+                    echo "&lt;td&gt;" . $row['firstname'] . "&lt;/td&gt;"; 
+                    <br>
+                    echo "&lt;td&gt;" . $row['lastname'] . "&lt;/td&gt;";
+                    <br>
+                    echo "&lt;td&gt;" . $row['age'] . "&lt;/td&gt;";
+                    <br>
+                    echo "&lt;td&gt;" . $row['hometown'] . "&lt;/td&gt;";
+                    <br>
+                    echo "&lt;td&gt;" . $row['job'] . "&lt;/td&gt;";
+                    <br>
+                    echo "&lt;/tr&gt;";
+                    <br>
+                }
+                <br>
+                echo "&lt;/table&gt;";
+                <br>
+                mysqli_close($conn);
+                <br>
+                ?&gt; 
+                <br>
+                &lt;/body&gt; 
+                <br>
+                &lt;/html&gt; 
+            </code>
+
+            <br>
+            <br>
+
+            Explanation: When the query is sent from the JavaScript to the PHP file, the following happens: 
+            <br>
+            <ol>
+                <li>PHP opens a connection to a MySQL server</li>
+                <li>The correct person is found</li>
+                <li>A HTML table is created, filled with data, and sent back to the "textHint" placeholder</li>
+            </ol>
+        </div>
+
+        <script>
+            function showUser(str) {
+                if(str == "") {
+                    document.getElementById("txtHint").innerHTML = "";
+                    return;
+                }
+                else {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function() {
+                        if(this.readyState == 4 && this.status == 200) {
+                            document.getElementById("txtHint").innerHTML = this.responseText;
+                        }
+                    };
+                    xmlhttp.open("GET", "74. PHP AJAX Database-getuser.php?q=" + str, true);
+                    xmlhttp.send();
+                }
+            }
+        </script>
+    </body>
+</html>
