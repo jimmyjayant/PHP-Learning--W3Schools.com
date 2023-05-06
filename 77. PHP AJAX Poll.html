@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-in">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            PHP AJAX Poll                   
+        </title>
+        <style>
+            html {
+                font-size:calc(10px + 0.390625vw);
+            }
+
+            body {
+                font-family:verdana, sans-serif;
+                font-size:1rem;
+                line-height:1.5;
+            }
+
+            .edit {
+                background-color:#f1f1f1;
+                color:red;
+            }
+
+            .edit1 {
+                background-color:rgba(255,255,0,0.3);
+                padding:2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            PHP Example - AJAX Poll             
+        </h1>
+
+        <hr>
+
+        <h2>
+            AJAX Poll 
+        </h2>
+
+        <div>
+            The following example will demonstrate a poll where the result is shown without reloading. 
+            <br>
+            <div id="poll">
+            <h3>
+                Do you like PHP and AJAX so far? 
+            </h3>
+
+            <form>
+                Yes: <input type="radio" name="vote" value="0" onclick="getVote(this.value)">
+                <br>
+                No: <input type="radio" name="vote" value="1" onclick="getVote(this.value)">
+            </form>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>
+            Example Explained - The HTML Page 
+        </h2>
+
+        <div>
+            When a user chooses an option above, a function called "getVote()" is executed. The function is triggered by the "onclick" event. 
+            <br>
+            <br>
+            <code>
+            &lt;html&gt;
+            <br>
+            &lt;head&gt;
+            <br>
+            &lt;script&gt;
+            <br>
+            function getVote(int) {
+            <br>
+            var xmlhttp = new XMLHttpRequest();
+            <br>
+            xmlhttp.onreadystatechange = function() {
+            <br>
+            if(this.readyState == 4 && this.status == 200) {
+            <br>
+            document.getElementById("poll").innerHTML = this.responseText; 
+            <br>
+            }
+            <br>
+            }
+            <br>
+            xmlhttp.open("GET", "77. PHP AJAX Poll-poll_vote.php?vote=" + int, true);
+            <br>
+            xmlhttp.send(); 
+            <br>
+            }
+            <br>
+            &lt;/script&gt;
+                    <br>
+            &lt;/head&gt;
+            <br>
+            &lt;body&gt;
+            <br>
+            &lt;div id="poll"&gt;
+            <br>
+            &lt;h3&gt;
+            <br>
+            Do you like PHP and AJAX so far? 
+            <br>
+            &lt;/h3&gt;
+            <br>
+            &lt;form&gt;
+            <br>
+            Yes: &lt;input type="radio" name="vote" value="0" onclick="getVote(this.value)"&gt;
+            <br>
+            &lt;br&gt;
+            <br>
+            No: &lt;input type="radio" name="vote" value="1" onclick="getVote(this.value)"&gt;
+            <br>
+            &lt;/form&gt;
+            <br>
+            &lt;/div&gt;
+            <br>
+            &lt;/body&gt;
+            <br>
+            &lt;/html&gt;
+            </code>
+
+            <br>
+            <br>
+            The getVote() function does the following: 
+            <br>
+            <ul>
+                <li>Create an XMLHttpRequest object</li>
+                <li>Create the function to be executed when the server response is ready</li>
+                <li>Send the request off to a file on the server</li>
+                <li>Notice that a parameter (vote) is added to the URL (with the value of the yes or no option)</li>
+            </ul>
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <hr>
+
+        <h2>
+            The PHP File 
+        </h2>
+
+        <div>
+            The page on the server called by the JavaScript above is a PHP file called "77. PHP AJAX Poll-poll_vote.php":- 
+            <br>
+            <br>
+            <code>
+                &lt;?php
+                <br>
+                $vote = $_REQUEST['vote'];
+                <br>
+                <br>
+                // get the content of textfile 
+                <br>
+                $filename = "77. PHP AJAX Poll-poll_result.txt";
+                <br>
+                $content = file($filename);
+                <br>
+                <br>
+                // put content in array
+                <br>
+                $array = explode("||", $content[0]);
+                <br>
+                $yes = $array[0];
+                <br>
+                $no = $array[1];
+                <br>
+                <br>
+                if($vote == 0) {
+                    <br>
+                    $yes = $yes + 1;
+                    <br>
+                }
+                <br>
+                if($vote == 1) {
+                    <br>
+                    $no = $no + 1;
+                    <br>
+                }
+                <br>
+                <br>
+                // insert votes to txt file 
+                <br>
+                $insertvote = $yes . "||" . $no;
+                <br>
+                $fp = fopen($filename, "w");
+                <br>
+                fputs($fp, $insertvote);
+                <br>
+                fclose($fp);
+                <br>
+                ?&gt;
+                <br>
+                <br>
+                &lt;h2&gt;
+                <br>
+                Result: 
+                <br>
+                &lt;/h2&gt;
+                <br>
+                &lt;table&gt;
+                <br>
+                &lt;tr&gt;
+                <br>
+                &lt;td&gt;Yes: &lt;/td&gt;
+                <br>
+                &lt;td&gt;&lt;img src="Image2.gif" width="&lt;?php echo (100*round($yes/($no+$yes),2)); ?&gt;" height="20"&gt;
+                <br>
+                &lt;?php echo (100*round($yes/($no+$yes),2)); ?&gt;% 
+                <br>
+                &lt;/td&gt;
+                <br>
+                &lt;/tr&gt;
+                <br>
+                &lt;tr&gt;
+                <br>
+                &lt;td&gt;No: &lt;/td&gt;
+                <br>
+                &lt;td&gt;
+                <br>
+                &lt;img src="Image2.gif" width="&lt;?php echo (100*round($no/($no+$yes),2)); ?&gt;" height="20"&gt;
+                <br>
+                &lt;?php echo (100*round($no/($no+$yes),2)); ?&gt;% 
+                <br>
+                &lt;/td&gt;
+                <br>
+                &lt;/tr&gt;
+                <br>
+                &lt;/table&gt;
+            </code>
+
+            <br>
+            <br>
+            The value is sent from the JavaScript, and the following happens: 
+            <br>
+            <ol>
+                <li>Get the content of the "77. PHP AJAX Poll-poll_result.txt" file</li>
+                <li>Put the content of the file in variables and add one to the selected variable</li>
+                <li>Write the result to the "77. PHP AJAX Poll-poll_result.txt" file</li>
+                <li>Output a graphical representation of the poll result</li>
+            </ol>
+        </div>
+
+        <hr>
+
+        <h2>
+            The Text File 
+        </h2>
+
+        <div>
+            The text file (77. PHP AJAX Poll-poll_result.txt) is where we store the data from the poll. 
+            <br>
+            It is stored like this: 
+            <br>
+            <p style="border:0.1rem solid grey; padding:2rem;">
+             0 || 0 
+            </p>
+            <br>
+            The first number represents the "Yes" votes, the second number represents the "No" votes. 
+            <br>
+            <strong>Note: </strong>Remember to allow your web server to edit the text file. Do <strong>NOT</strong> give everyone access, just the web server (PHP). 
+        </div>
+
+        <script>
+            function getVote(int) {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("poll").innerHTML = this.responseText; 
+                    }
+                }
+                xmlhttp.open("GET", "77. PHP AJAX Poll-poll_vote.php?vote=" + int, true);
+                xmlhttp.send(); 
+            }
+        </script>
+    </body>
+</html>
