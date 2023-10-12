@@ -1,4 +1,5 @@
 <?php
+namespace Example3;
 class Fruit {
     public $name;
     public $color;

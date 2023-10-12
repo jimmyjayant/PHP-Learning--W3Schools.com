@@ -1,4 +1,5 @@
 <?php
+namespace Example5;
 final class Fruit {
     // some code
 }
